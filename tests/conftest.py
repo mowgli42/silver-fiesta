@@ -8,11 +8,15 @@ MOUNT_POINT = os.environ.get("NFS_MOUNT_POINT", "/mnt/nfs")
 @pytest.fixture(scope="session")
 def nfs_root():
     if not os.path.exists(MOUNT_POINT):
-        # Allow running locally if mount point doesn't exist but we want to debug logic
-        # But strictly speaking we should fail.
-        # Check if it is mounted? 
-        pass
+        pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+    if not os.path.ismount(MOUNT_POINT):
+        pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
     return MOUNT_POINT
+
+@pytest.fixture(scope="session")
+def nfs_server_type():
+    """Return the configured NFS server type (kernel or lightweight)."""
+    return os.environ.get("NFS_SERVER_TYPE", "kernel")
 
 @pytest.fixture(scope="function")
 def test_dir(nfs_root):

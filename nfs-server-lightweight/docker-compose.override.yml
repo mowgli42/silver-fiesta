@@ -1,0 +1,9 @@
+services:
+  nfs-server:
+    image: erichough/nfs-server
+    privileged: true
+    environment:
+      - "NFS_EXPORT_0=/data *(rw,sync,no_subtree_check,no_root_squash)"
+    volumes:
+      - nfs-data:/data
+

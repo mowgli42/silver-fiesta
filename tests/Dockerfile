@@ -18,4 +18,4 @@ RUN chmod +x run_tests.sh
 # Create mount point
 RUN mkdir -p /mnt/nfs
 
-CMD ["./run_tests.sh"]
+CMD ["bash", "run_tests.sh"]

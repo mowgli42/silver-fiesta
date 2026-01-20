@@ -9,5 +9,29 @@ exportfs -r
 
 # Start NFS daemons
 rpc.statd
-rpc.nfsd --debug 8 -N 2 -N 3
-rpc.mountd --debug all --no-nfs-version 2 --no-nfs-version 3 --foreground
+
+# Start nfsd - run in background
+# Note: Alpine's nfs-utils supports NFSv4 by default
+rpc.nfsd
+
+# Start mountd in foreground to keep container running
+rpc.mountd --foreground
+MOUNTD_PID=$!
+
+# Basic readiness check for NFSv4
+# NOTE: This is a simple readiness check. Does not verify:
+# - All required RPC services are running
+# - Exports are properly configured
+# - Network connectivity from clients
+if command -v rpcinfo >/dev/null 2>&1; then
+  for i in $(seq 1 10); do
+    if rpcinfo -t localhost nfs 4 >/dev/null 2>&1; then
+      echo "NFS server is ready."
+      break
+    fi
+    echo "Waiting for NFS server to be ready..."
+    sleep 1
+  done
+fi
+
+wait "$MOUNTD_PID"

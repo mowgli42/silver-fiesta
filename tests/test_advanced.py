@@ -4,8 +4,13 @@ import stat
 import fcntl
 import time
 
+@pytest.mark.requires_permissions
 def test_permissions(test_dir):
-    """Test file permission changes."""
+    """Test file permission changes.
+    
+    NOTE: This test may behave differently when running as root in containers.
+    Permission enforcement is tested, but root can bypass restrictions.
+    """
     file_path = os.path.join(test_dir, "perm_test.txt")
     with open(file_path, "w") as f:
         f.write("data")
@@ -29,8 +34,14 @@ def test_permissions(test_dir):
     with open(file_path, "w") as f:
         f.write("new data")
 
+@pytest.mark.requires_lockd
 def test_file_locking(test_dir):
-    """Test advisory file locking (flock)."""
+    """Test advisory file locking (flock).
+    
+    NOTE: File locking behavior varies by NFS server implementation.
+    Requires lockd/rpc.statd to be running. Some lightweight servers may
+    not support locking, in which case this test will be skipped.
+    """
     file_path = os.path.join(test_dir, "lock_test.txt")
     with open(file_path, "w") as f:
         f.write("lock me")

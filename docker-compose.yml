@@ -1,12 +1,27 @@
-version: '3.8'
-
 services:
   nfs-server:
     build: ./nfs-server
     container_name: nfs-server
     privileged: true
+    profiles:
+      - kernel
     environment:
       - NFS_LOG_LEVEL=DEBUG
+    ports:
+      - "2049:2049"
+    networks:
+      - nfs-net
+
+  nfs-server-lightweight:
+    image: erichough/nfs-server
+    container_name: nfs-server-lightweight
+    privileged: true
+    profiles:
+      - lightweight
+    environment:
+      - "NFS_EXPORT_0=/data *(rw,sync,no_subtree_check,no_root_squash,fsid=0)"
+    volumes:
+      - nfs-data:/data
     ports:
       - "2049:2049"
     networks:
@@ -16,10 +31,14 @@ services:
     build: ./tests
     container_name: test-runner
     privileged: true
-    depends_on:
-      - nfs-server
+    profiles:
+      - kernel
+      - lightweight
     environment:
-      - NFS_SERVER=nfs-server
+      - NFS_SERVER=${NFS_SERVER:-nfs-server}
+      - NFS_SERVER_TYPE=${NFS_SERVER_TYPE:-kernel}
+      - NFS_VERSION=${NFS_VERSION:-4}
+      - NFS_MOUNT_OPTS=${NFS_MOUNT_OPTS:-vers=4,proto=tcp}
     volumes:
       # Optional: mount local tests dir to develop faster without rebuilds
       - ./tests:/app
@@ -28,3 +47,6 @@ services:
 
 networks:
   nfs-net:
+
+volumes:
+  nfs-data:

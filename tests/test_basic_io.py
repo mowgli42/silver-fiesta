@@ -54,7 +54,14 @@ def test_directory_operations(test_dir):
     assert not os.path.exists(sub_dir)
 
 def test_large_file_io(test_dir):
-    """Test writing and reading a larger file (e.g. 1MB)."""
+    """Test writing and reading a larger file (e.g. 1MB).
+    
+    NOTE: Tests 1MB file I/O. Does not test:
+    - Very large files (>100MB)
+    - Chunked/streaming reads/writes
+    - Partial reads/writes
+    - File truncation
+    """
     file_path = os.path.join(test_dir, "large_file.bin")
     size = 1024 * 1024 # 1MB
     data = os.urandom(size)

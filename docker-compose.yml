@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  nfs-server:
+    build: ./nfs-server
+    container_name: nfs-server
+    privileged: true
+    environment:
+      - NFS_LOG_LEVEL=DEBUG
+    ports:
+      - "2049:2049"
+    networks:
+      - nfs-net
+
+  test-runner:
+    build: ./tests
+    container_name: test-runner
+    privileged: true
+    depends_on:
+      - nfs-server
+    environment:
+      - NFS_SERVER=nfs-server
+    volumes:
+      # Optional: mount local tests dir to develop faster without rebuilds
+      - ./tests:/app
+    networks:
+      - nfs-net
+
+networks:
+  nfs-net:

@@ -26,6 +26,17 @@ done
 
 echo "Mount successful. Running tests..."
 export NFS_MOUNT_POINT="$MOUNT_POINT"
-pytest -v
+
+# Report generation setup
+REPORT_DIR="reports"
+mkdir -p "$REPORT_DIR"
+TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+SYSTEM_TESTED="nfs-server"
+REPORT_FILE="$REPORT_DIR/${TIMESTAMP}-${SYSTEM_TESTED}.txt"
+
+echo "Generating test report at: $REPORT_FILE"
+
+# Run pytest and capture output to file and stdout
+pytest -v 2>&1 | tee "$REPORT_FILE"
 
 echo "Tests completed."

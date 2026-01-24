@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e -o pipefail
 
 SERVER_HOST="nfs-server"
 MOUNT_POINT="/mnt/nfs"
@@ -37,6 +37,10 @@ REPORT_FILE="$REPORT_DIR/${TIMESTAMP}-${SYSTEM_TESTED}.txt"
 echo "Generating test report at: $REPORT_FILE"
 
 # Run pytest and capture output to file and stdout
-pytest -v 2>&1 | tee "$REPORT_FILE"
+# -v: verbose (show each test name)
+# -s: show stdout (don't capture)
+# -rA: show extra test summary info for all tests
+# --durations=0: show durations for all tests (0 means all, not just slowest)
+pytest -v -s -rA --durations=0 2>&1 | tee "$REPORT_FILE"
 
 echo "Tests completed."

@@ -1,0 +1,324 @@
+==========================================
+NFS SERVER PERFORMANCE TEST SUMMARY
+==========================================
+Test Run: 2026-01-30_20-26-08
+Server Type: lightweight
+Server Host: nfs-server-lightweight
+NFS Version: 4
+Mount Options: vers=4,proto=tcp
+Fault Profile: none
+Fault Class: none
+Expected Failures: 0
+
+----------------------------------------
+TEST EXECUTION SUMMARY
+----------------------------------------
+
+----------------------------------------
+TEST EXECUTION LIST
+----------------------------------------
+
+All Tests Executed:
+  test_advanced::test_permissions                             
+  test_advanced::test_permissions                             
+  test_advanced::test_file_locking                            
+  test_advanced::test_file_locking                            
+  test_basic_io::test_file_create_read_write                  
+  test_basic_io::test_file_create_read_write                  
+  test_basic_io::test_file_append                             
+  test_basic_io::test_file_append                             
+  test_basic_io::test_directory_operations                    
+  test_basic_io::test_directory_operations                    
+  test_basic_io::test_large_file_io                           
+  test_basic_io::test_large_file_io                           
+  test_concurrent::test_concurrent_writes                     
+  test_concurrent::test_concurrent_writes                     
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]
+  test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]
+  test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]
+  test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-128kb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-128kb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-256kb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-256kb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-512kb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-512kb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-1mb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-1mb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-2mb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-2mb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-4mb]
+  test_data_integrity::test_data_integrity[0x0101-\x01\x01-4mb]
+  test_data_integrity::test_data_integrity[random-None-512b]  
+  test_data_integrity::test_data_integrity[random-None-512b]  
+  test_data_integrity::test_data_integrity[random-None-1kb]   
+  test_data_integrity::test_data_integrity[random-None-1kb]   
+  test_data_integrity::test_data_integrity[random-None-128kb] 
+  test_data_integrity::test_data_integrity[random-None-128kb] 
+  test_data_integrity::test_data_integrity[random-None-256kb] 
+  test_data_integrity::test_data_integrity[random-None-256kb] 
+  test_data_integrity::test_data_integrity[random-None-512kb] 
+  test_data_integrity::test_data_integrity[random-None-512kb] 
+  test_data_integrity::test_data_integrity[random-None-1mb]   
+  test_data_integrity::test_data_integrity[random-None-1mb]   
+  test_data_integrity::test_data_integrity[random-None-2mb]   
+  test_data_integrity::test_data_integrity[random-None-2mb]   
+  test_data_integrity::test_data_integrity[random-None-4mb]   
+  test_data_integrity::test_data_integrity[random-None-4mb]   
+  test_metadata::test_timestamps_update                       
+  test_metadata::test_timestamps_update                       
+  test_metadata::test_utime_roundtrip                         
+  test_metadata::test_utime_roundtrip                         
+  test_off_nominal_network::test_network_latency_detection    
+  test_off_nominal_network::test_network_latency_detection    
+  test_off_nominal_network::test_network_loss_detection       
+  test_off_nominal_network::test_network_loss_detection       
+  test_off_nominal_nfs::test_read_only_export_detection       
+  test_off_nominal_nfs::test_read_only_export_detection       
+  test_off_nominal_nfs::test_root_squash_detection            
+  test_off_nominal_nfs::test_root_squash_detection            
+  test_off_nominal_resource::test_disk_full_detection         
+  test_off_nominal_resource::test_disk_full_detection         
+  test_off_nominal_resource::test_inode_exhaustion_detection  
+  test_off_nominal_resource::test_inode_exhaustion_detection  
+  test_off_nominal_server::test_server_restart_detection      
+  test_off_nominal_server::test_server_restart_detection      
+  test_performance::test_write_throughput[1MB]                
+  test_performance::test_write_throughput[1MB]                
+  test_performance::test_write_throughput[5MB]                
+  test_performance::test_write_throughput[5MB]                
+  test_performance::test_write_throughput[10MB]               
+  test_performance::test_write_throughput[10MB]               
+  test_performance::test_read_throughput[1MB]                 
+  test_performance::test_read_throughput[1MB]                 
+  test_performance::test_read_throughput[5MB]                 
+  test_performance::test_read_throughput[5MB]                 
+  test_performance::test_read_throughput[10MB]                
+  test_performance::test_read_throughput[10MB]                
+  test_performance::test_sequential_io_throughput             
+  test_performance::test_sequential_io_throughput             
+  test_performance::test_small_file_latency                   
+  test_performance::test_small_file_latency                   
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.502s)
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.502s)
+PASSEDPASSED
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.006s)
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.006s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.006s)
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.006s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.005s)
+PASSED
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.005s)
+PASSED
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.004s)
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.020s)
+PASSED
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.020s)
+PASSED
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.043s)
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.043s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.007s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.007s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.006s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.006s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.012s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.012s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.024s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.024s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.042s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.042s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.007s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.007s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.007s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.007s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.008s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.008s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.014s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.014s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.029s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.029s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.008s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.008s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.007s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.007s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.011s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.011s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.016s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.016s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.035s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.035s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.006s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.006s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]: PASSED (0.004s)
+PASSED
+
+----------------------------------------
+PERFORMANCE METRICS
+----------------------------------------
+
+Performance Measurements:
+  [PERF] Write 1MB: 0.009s, Throughput: 106.03 MB/s
+  [PERF] Write 1MB: 0.009s, Throughput: 106.03 MB/s
+  [PERF] Write 5MB: 0.028s, Throughput: 179.39 MB/s
+  [PERF] Write 5MB: 0.028s, Throughput: 179.39 MB/s
+  [PERF] Write 10MB: 0.109s, Throughput: 92.10 MB/s
+  [PERF] Write 10MB: 0.109s, Throughput: 92.10 MB/s
+  [PERF] Read 1MB: 0.002s, Throughput: 573.78 MB/s
+  [PERF] Read 1MB: 0.002s, Throughput: 573.78 MB/s
+  [PERF] Read 5MB: 0.002s, Throughput: 2.31 GB/s
+  [PERF] Read 5MB: 0.002s, Throughput: 2.31 GB/s
+  [PERF] Read 10MB: 0.003s, Throughput: 3.00 GB/s
+  [PERF] Read 10MB: 0.003s, Throughput: 3.00 GB/s
+  [PERF] Sequential I/O (10MB):
+  [PERF] Sequential I/O (10MB):
+  [PERF] Small File Latency (1KB, 100 files):
+  [PERF] Small File Latency (1KB, 100 files):
+
+Test Durations (slowest first):
+  103.50s call     test_advanced.py::test_permissions
+  1.01s call     test_metadata.py::test_timestamps_update
+  0.33s call     test_performance.py::test_small_file_latency
+  0.14s call     test_performance.py::test_write_throughput[10MB]
+  0.12s call     test_performance.py::test_sequential_io_throughput
+  0.07s call     test_performance.py::test_read_throughput[10MB]
+  0.05s call     test_data_integrity.py::test_data_integrity[random-None-4mb]
+  0.05s call     test_performance.py::test_read_throughput[5MB]
+  0.05s call     test_performance.py::test_write_throughput[5MB]
+  0.04s call     test_concurrent.py::test_concurrent_writes
+  0.04s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+  0.03s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb]
+  0.03s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb]
+  0.03s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb]
+  0.02s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb]
+  0.02s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+  0.02s call     test_data_integrity.py::test_data_integrity[random-None-2mb]
+  0.02s teardown test_performance.py::test_small_file_latency
+  0.02s call     test_basic_io.py::test_large_file_io
+  0.02s call     test_data_integrity.py::test_data_integrity[random-None-256kb]
+  0.02s call     test_performance.py::test_read_throughput[1MB]
+  0.02s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb]
+  0.02s call     test_data_integrity.py::test_data_integrity[random-None-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[random-None-512kb]
+  0.01s call     test_performance.py::test_write_throughput[1MB]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[random-None-128kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb]
+  0.01s teardown test_performance.py::test_write_throughput[10MB]
+  0.01s call     test_data_integrity.py::test_data_integrity[random-None-512b]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb]
+  0.01s call     test_advanced.py::test_file_locking
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b]
+  0.01s call     test_basic_io.py::test_file_create_read_write
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb]
+  0.01s call     test_basic_io.py::test_file_append
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+  PASSED test_advanced.py::test_permissions
+Unmounting /mnt/nfs...

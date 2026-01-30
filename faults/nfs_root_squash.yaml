@@ -1,0 +1,5 @@
+name: nfs_root_squash
+type: nfs_export
+description: Enable root_squash to break root writes
+exports_file: exports_root_squash
+

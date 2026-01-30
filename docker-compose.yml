@@ -1,29 +1,61 @@
 services:
-  nfs-server:
-    build: ./nfs-server
-    container_name: nfs-server
-    privileged: true
-    profiles:
-      - kernel
-    environment:
-      - NFS_LOG_LEVEL=DEBUG
-    ports:
-      - "2049:2049"
-    networks:
-      - nfs-net
-
+  # Default: Lightweight NFS server (pre-built image, no build required)
+  # Also used for network fault testing (faults profile)
   nfs-server-lightweight:
     image: erichough/nfs-server
     container_name: nfs-server-lightweight
     privileged: true
     profiles:
-      - lightweight
+      - default  # Default profile - starts unless another profile is specified
+      - faults   # Also available for network fault testing
     environment:
       - "NFS_EXPORT_0=/data *(rw,sync,no_subtree_check,no_root_squash,fsid=0)"
+      - NFS_VERBOSE=${NFS_VERBOSE:-false}  # Enable verbose logging
+      - NFS_LOG_LEVEL=${NFS_LOG_LEVEL:-INFO}  # Log level: INFO, DEBUG
     volumes:
       - nfs-data:/data
     ports:
       - "2049:2049"
+    networks:
+      - nfs-net
+
+  # Optional: Kernel-based NFS server (requires build, use --profile kernel)
+  # NOTE: Requires NFS kernel modules on host and takes longer to start
+  nfs-server:
+    build: ./nfs-server
+    container_name: nfs-server
+    privileged: true
+    profiles:
+      - kernel  # Use --profile kernel to enable this server
+    environment:
+      - NFS_VERBOSE=${NFS_VERBOSE:-false}  # Enable verbose logging
+      - NFS_LOG_LEVEL=${NFS_LOG_LEVEL:-INFO}  # Log level: INFO, DEBUG
+    volumes:
+      - nfs-data-kernel:/data  # Use a real volume to avoid overlayfs export issues
+    ports:
+      - "2049:2049"
+    networks:
+      - nfs-net
+
+  # Fault profile: kernel server with alternative exports (misconfig testing)
+  # Only used for NFS config faults, not network faults
+  # Note: Not exposing port 2049 to host to avoid conflict with nfs-server-lightweight
+  # Access is via Docker network only (containers can still connect)
+  nfs-server-faults:
+    build: ./nfs-server
+    container_name: nfs-server-faults
+    privileged: true
+    profiles:
+      - faults
+    environment:
+      - NFS_VERBOSE=${NFS_VERBOSE:-true}  # Default to verbose for fault testing
+      - NFS_LOG_LEVEL=${NFS_LOG_LEVEL:-DEBUG}  # Default to DEBUG for fault testing
+    volumes:
+      - ./faults/${FAULT_EXPORTS:-exports_ro}:/etc/exports:ro
+      - nfs-data-faults:/data  # Ensure /data exists for exports
+    # Not exposing port to host - access via Docker network only (avoids port conflict)
+    # For network faults, nfs-server-lightweight uses 2049; for NFS config faults,
+    # test-runner-faults connects via Docker network (no host port needed)
     networks:
       - nfs-net
 
@@ -32,11 +64,11 @@ services:
     container_name: test-runner
     privileged: true
     profiles:
-      - kernel
-      - lightweight
+      - default  # Default profile - starts unless another profile is specified
+      - kernel   # Allow running with kernel server
     environment:
-      - NFS_SERVER=${NFS_SERVER:-nfs-server}
-      - NFS_SERVER_TYPE=${NFS_SERVER_TYPE:-kernel}
+      - NFS_SERVER=${NFS_SERVER:-nfs-server-lightweight}
+      - NFS_SERVER_TYPE=${NFS_SERVER_TYPE:-lightweight}
       - NFS_VERSION=${NFS_VERSION:-4}
       - NFS_MOUNT_OPTS=${NFS_MOUNT_OPTS:-vers=4,proto=tcp}
     volumes:
@@ -45,8 +77,52 @@ services:
     networks:
       - nfs-net
 
+  # Fault profile: test runner - uses lightweight server for network faults, nfs-server-faults for NFS config faults
+  test-runner-faults:
+    build: ./tests
+    container_name: test-runner-faults
+    privileged: true
+    profiles:
+      - faults
+    environment:
+      # NFS_SERVER will be set by run_tests.sh based on FAULT_PROFILE
+      # For network faults (network_*), use lightweight server; for NFS config faults, use nfs-server-faults
+      - NFS_SERVER=${NFS_SERVER}  # If not set, run_tests.sh will determine based on FAULT_PROFILE
+      - NFS_SERVER_TYPE=${NFS_SERVER_TYPE}  # If not set, run_tests.sh will determine
+      - NFS_VERSION=${NFS_VERSION:-4}
+      - NFS_MOUNT_OPTS=${NFS_MOUNT_OPTS:-vers=4,proto=tcp}
+      - FAULT_PROFILE=${FAULT_PROFILE:-nfs_ro_export}
+      - FAULT_CLASS=${FAULT_CLASS}  # If not set, run_tests.sh will determine
+    volumes:
+      - ./tests:/app
+      - ./tests/reports:/app/reports  # Persist reports to host
+    networks:
+      - nfs-net
+
+  netem:
+    build:
+      context: ./faults
+      dockerfile: netem.Dockerfile
+    container_name: netem
+    profiles:
+      - faults
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - FAULT_PROFILE=${FAULT_PROFILE:-network_loss_10}
+      - NETEM_IFACE=${NETEM_IFACE:-eth0}
+    volumes:
+      - ./faults:/faults:ro
+    network_mode: "service:test-runner-faults"
+    depends_on:
+      - test-runner-faults
+
 networks:
   nfs-net:
+    driver: bridge
+    name: silver-fiesta_nfs-net
 
 volumes:
   nfs-data:
+  nfs-data-faults:
+  nfs-data-kernel:

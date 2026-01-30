@@ -1,10 +1,10 @@
 FROM alpine:latest
 
-# Install NFS utilities
-RUN apk add --no-cache nfs-utils bash
+# Install NFS utilities and monitoring tools
+RUN apk add --no-cache nfs-utils bash procps net-tools
 
-# Create directory to share
-RUN mkdir -p /data
+# Create directory to share and log directory
+RUN mkdir -p /data /var/log
 
 # Copy exports configuration
 COPY exports /etc/exports

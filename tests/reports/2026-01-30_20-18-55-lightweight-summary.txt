@@ -1,0 +1,122 @@
+==========================================
+NFS SERVER PERFORMANCE TEST SUMMARY
+==========================================
+Test Run: 2026-01-30_20-18-55
+Server Type: lightweight
+Server Host: nfs-server-lightweight
+NFS Version: 4
+Mount Options: vers=4,proto=tcp
+Fault Profile: none
+Fault Class: none
+Expected Failures: 0
+
+----------------------------------------
+TEST EXECUTION SUMMARY
+----------------------------------------
+
+----------------------------------------
+TEST EXECUTION LIST
+----------------------------------------
+
+All Tests Executed:
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.525s)
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.525s)
+PASSEDPASSED
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.005s)
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.004s)
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.006s)
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.006s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.006s)
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.006s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.016s)
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.016s)
+PASSEDPASSED
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.034s)
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.034s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.005s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.005s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.006s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.006s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.008s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.008s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.009s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.009s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.017s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.017s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.038s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.038s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.005s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.005s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.005s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.005s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.007s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.007s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.008s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.008s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.009s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.009s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.013s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.013s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.034s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.034s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.007s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.007s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.008s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.008s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.009s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.009s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.008s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.008s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.010s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.010s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.022s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.022s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.022s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.022s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.005s)
+Unmounting /mnt/nfs...

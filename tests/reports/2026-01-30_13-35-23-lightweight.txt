@@ -1,0 +1,8 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.0, pluggy-1.6.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /app
+configfile: pytest.ini
+collecting ... collected 50 items
+
+test_advanced.py::test_permissions 

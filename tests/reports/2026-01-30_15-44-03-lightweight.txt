@@ -1,0 +1,50 @@
+[DEBUG 15:44:03] === Test Runner Startup ===
+[DEBUG 15:44:03] SERVER_HOST=nfs-server-lightweight
+[DEBUG 15:44:03] NFS_SERVER env=nfs-server-lightweight
+[DEBUG 15:44:03] NFS_SERVER_TYPE=lightweight
+[DEBUG 15:44:03] Starting server connectivity checks
+[DEBUG 15:44:03] Attempting to resolve hostname: nfs-server-lightweight
+[DEBUG 15:44:03] Hostname resolved: 172.18.0.2      nfs-server-lightweight
+[DEBUG 15:44:03] Ping successful to nfs-server-lightweight
+[DEBUG 15:44:03] NFS port 2049 is accessible
+==========================================
+NFS Server Performance Test Suite
+==========================================
+Server Type: lightweight
+Server Host: nfs-server-lightweight
+NFS Version: 4
+Mount Options: vers=4,proto=tcp
+Fault Profile: none
+Fault Class: none
+Expected Failures: 0
+Report Files:
+  - Detailed: reports/2026-01-30_15-44-03-lightweight.txt
+  - HTML: reports/2026-01-30_15-44-03-lightweight.html
+  - JSON: reports/2026-01-30_15-44-03-lightweight.json
+  - Summary: reports/2026-01-30_15-44-03-lightweight-summary.txt
+==========================================
+
+Starting test execution...
+Each test will be displayed as it runs.
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.0, pluggy-1.6.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+metadata: {'Python': '3.9.25', 'Platform': 'Linux-6.17.9-arch1-1-x86_64-with-glibc2.41', 'Packages': {'pytest': '7.4.0', 'pluggy': '1.6.0'}, 'Plugins': {'timeout': '2.2.0', 'metadata': '3.1.1', 'benchmark': '4.0.0', 'json-report': '1.5.0', 'html': '4.1.1'}}
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /app
+configfile: pytest.ini
+plugins: timeout-2.2.0, metadata-3.1.1, benchmark-4.0.0, json-report-1.5.0, html-4.1.1
+collecting ... ============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.0, pluggy-1.6.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+metadata: {'Python': '3.9.25', 'Platform': 'Linux-6.17.9-arch1-1-x86_64-with-glibc2.41', 'Packages': {'pytest': '7.4.0', 'pluggy': '1.6.0'}, 'Plugins': {'timeout': '2.2.0', 'metadata': '3.1.1', 'benchmark': '4.0.0', 'json-report': '1.5.0', 'html': '4.1.1'}}
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /app
+configfile: pytest.ini
+plugins: timeout-2.2.0, metadata-3.1.1, benchmark-4.0.0, json-report-1.5.0, html-4.1.1
+collecting ... collected 64 items
+
+test_advanced.py::test_permissions collected 64 items
+
+test_advanced.py::test_permissions Unmounting /mnt/nfs...

@@ -1,0 +1,7 @@
+name: network_latency_200
+type: netem
+description: 200ms latency with 20ms jitter
+netem:
+  delay: "200ms"
+  jitter: "20ms"
+

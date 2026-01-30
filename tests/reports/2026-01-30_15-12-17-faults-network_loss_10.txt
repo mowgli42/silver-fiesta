@@ -1,0 +1,914 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.0, pluggy-1.6.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+metadata: {'Python': '3.9.25', 'Platform': 'Linux-6.17.9-arch1-1-x86_64-with-glibc2.41', 'Packages': {'pytest': '7.4.0', 'pluggy': '1.6.0'}, 'Plugins': {'timeout': '2.2.0', 'metadata': '3.1.1', 'benchmark': '4.0.0', 'json-report': '1.5.0', 'html': '4.1.1'}}
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /app
+configfile: pytest.ini
+plugins: timeout-2.2.0, metadata-3.1.1, benchmark-4.0.0, json-report-1.5.0, html-4.1.1
+collecting ... collected 64 items
+
+test_advanced.py::test_permissions ERROR
+test_advanced.py::test_file_locking ERROR
+test_basic_io.py::test_file_create_read_write ERROR
+test_basic_io.py::test_file_append ERROR
+test_basic_io.py::test_directory_operations ERROR
+test_basic_io.py::test_large_file_io ERROR
+test_concurrent.py::test_concurrent_writes ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-512b] ERROR
+test_data_integrity.py::test_data_integrity[random-None-1kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-128kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-256kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-512kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-1mb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-2mb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-4mb] ERROR
+test_metadata.py::test_timestamps_update ERROR
+test_metadata.py::test_utime_roundtrip ERROR
+test_off_nominal_network.py::test_network_latency_detection ERROR
+test_off_nominal_network.py::test_network_loss_detection ERROR
+test_off_nominal_nfs.py::test_read_only_export_detection ERROR
+test_off_nominal_nfs.py::test_root_squash_detection ERROR
+test_off_nominal_resource.py::test_disk_full_detection ERROR
+test_off_nominal_resource.py::test_inode_exhaustion_detection ERROR
+test_off_nominal_server.py::test_server_restart_detection ERROR
+test_performance.py::test_write_throughput[1MB] ERROR
+test_performance.py::test_write_throughput[5MB] ERROR
+test_performance.py::test_write_throughput[10MB] ERROR
+test_performance.py::test_read_throughput[1MB] ERROR
+test_performance.py::test_read_throughput[5MB] ERROR
+test_performance.py::test_read_throughput[10MB] ERROR
+test_performance.py::test_sequential_io_throughput ERROR
+test_performance.py::test_small_file_latency ERROR
+
+==================================== ERRORS ====================================
+______________________ ERROR at setup of test_permissions ______________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_21d92cfe-0e6b-4e83-9e81-72bb84a154e6'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_21d92cfe-0e6b-4e83-9e81-72bb84a154e6: [Errno 30] Read-only file system: '/mnt/nfs/test_21d92cfe-0e6b-4e83-9e81-72bb84a154e6'
+_____________________ ERROR at setup of test_file_locking ______________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_3af99ff8-1e50-4dd0-a617-c28e93e4ce13'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_3af99ff8-1e50-4dd0-a617-c28e93e4ce13: [Errno 30] Read-only file system: '/mnt/nfs/test_3af99ff8-1e50-4dd0-a617-c28e93e4ce13'
+________________ ERROR at setup of test_file_create_read_write _________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_9772b44a-b973-4219-8940-3a2939f40b35'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_9772b44a-b973-4219-8940-3a2939f40b35: [Errno 30] Read-only file system: '/mnt/nfs/test_9772b44a-b973-4219-8940-3a2939f40b35'
+______________________ ERROR at setup of test_file_append ______________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_3859af03-45ae-4731-a0e8-9ef4220f48c0'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_3859af03-45ae-4731-a0e8-9ef4220f48c0: [Errno 30] Read-only file system: '/mnt/nfs/test_3859af03-45ae-4731-a0e8-9ef4220f48c0'
+_________________ ERROR at setup of test_directory_operations __________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_1cc859d1-515e-4e36-b563-616fe88d82fd'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_1cc859d1-515e-4e36-b563-616fe88d82fd: [Errno 30] Read-only file system: '/mnt/nfs/test_1cc859d1-515e-4e36-b563-616fe88d82fd'
+_____________________ ERROR at setup of test_large_file_io _____________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_81ea381b-332a-4267-8904-89d934c44c61'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_81ea381b-332a-4267-8904-89d934c44c61: [Errno 30] Read-only file system: '/mnt/nfs/test_81ea381b-332a-4267-8904-89d934c44c61'
+___________________ ERROR at setup of test_concurrent_writes ___________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_911855c2-b137-4c38-b6ff-529dd3c31798'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_911855c2-b137-4c38-b6ff-529dd3c31798: [Errno 30] Read-only file system: '/mnt/nfs/test_911855c2-b137-4c38-b6ff-529dd3c31798'
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512b] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_b70f1701-c40f-45e5-a6b2-7b741fb5d6d0'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_b70f1701-c40f-45e5-a6b2-7b741fb5d6d0: [Errno 30] Read-only file system: '/mnt/nfs/test_b70f1701-c40f-45e5-a6b2-7b741fb5d6d0'
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1kb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_d7f246b0-1bec-4570-8114-e0272cc6bb41'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_d7f246b0-1bec-4570-8114-e0272cc6bb41: [Errno 30] Read-only file system: '/mnt/nfs/test_d7f246b0-1bec-4570-8114-e0272cc6bb41'
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-128kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_afb518af-c197-47a9-ac0c-b0de8079a7c9'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_afb518af-c197-47a9-ac0c-b0de8079a7c9: [Errno 30] Read-only file system: '/mnt/nfs/test_afb518af-c197-47a9-ac0c-b0de8079a7c9'
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-256kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_e32055e5-c755-473a-af1e-8c340b682d9d'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_e32055e5-c755-473a-af1e-8c340b682d9d: [Errno 30] Read-only file system: '/mnt/nfs/test_e32055e5-c755-473a-af1e-8c340b682d9d'
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_5aed8325-8c4e-422c-83e5-3619a430f4ff'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_5aed8325-8c4e-422c-83e5-3619a430f4ff: [Errno 30] Read-only file system: '/mnt/nfs/test_5aed8325-8c4e-422c-83e5-3619a430f4ff'
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_d1e2d6a6-d4e6-4ac9-b6b2-1981799b4210'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_d1e2d6a6-d4e6-4ac9-b6b2-1981799b4210: [Errno 30] Read-only file system: '/mnt/nfs/test_d1e2d6a6-d4e6-4ac9-b6b2-1981799b4210'
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-2mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_fd74763f-d48e-4211-80c0-ecbef9ea20c2'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_fd74763f-d48e-4211-80c0-ecbef9ea20c2: [Errno 30] Read-only file system: '/mnt/nfs/test_fd74763f-d48e-4211-80c0-ecbef9ea20c2'
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-4mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_2c7daeeb-e353-4c5a-815e-7b7a220afeea'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_2c7daeeb-e353-4c5a-815e-7b7a220afeea: [Errno 30] Read-only file system: '/mnt/nfs/test_2c7daeeb-e353-4c5a-815e-7b7a220afeea'
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-512b] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_e65f41b2-6b15-401c-a9d0-1efbf37ffd23'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_e65f41b2-6b15-401c-a9d0-1efbf37ffd23: [Errno 30] Read-only file system: '/mnt/nfs/test_e65f41b2-6b15-401c-a9d0-1efbf37ffd23'
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-1kb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_80095f22-07dd-45b8-8e87-707790f4cbf9'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_80095f22-07dd-45b8-8e87-707790f4cbf9: [Errno 30] Read-only file system: '/mnt/nfs/test_80095f22-07dd-45b8-8e87-707790f4cbf9'
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-128kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_0c56906b-57b1-41e1-97b4-e30c6824278a'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_0c56906b-57b1-41e1-97b4-e30c6824278a: [Errno 30] Read-only file system: '/mnt/nfs/test_0c56906b-57b1-41e1-97b4-e30c6824278a'
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-256kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_4225d73b-22c2-4921-906a-12eae892cdff'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_4225d73b-22c2-4921-906a-12eae892cdff: [Errno 30] Read-only file system: '/mnt/nfs/test_4225d73b-22c2-4921-906a-12eae892cdff'
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-512kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_fb03c830-e7ff-448b-bc83-729ef568e305'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_fb03c830-e7ff-448b-bc83-729ef568e305: [Errno 30] Read-only file system: '/mnt/nfs/test_fb03c830-e7ff-448b-bc83-729ef568e305'
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-1mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_37bcdf09-dc73-4fe7-a9cc-75a0a516deeb'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_37bcdf09-dc73-4fe7-a9cc-75a0a516deeb: [Errno 30] Read-only file system: '/mnt/nfs/test_37bcdf09-dc73-4fe7-a9cc-75a0a516deeb'
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-2mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_7c76496f-a190-48b5-a133-818db0e6eb88'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_7c76496f-a190-48b5-a133-818db0e6eb88: [Errno 30] Read-only file system: '/mnt/nfs/test_7c76496f-a190-48b5-a133-818db0e6eb88'
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-4mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_8d055bbb-8c1f-4d42-bb5a-febb11fd84e0'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_8d055bbb-8c1f-4d42-bb5a-febb11fd84e0: [Errno 30] Read-only file system: '/mnt/nfs/test_8d055bbb-8c1f-4d42-bb5a-febb11fd84e0'
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-512b] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_72ea701e-1d0f-401d-8078-12071229aae0'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_72ea701e-1d0f-401d-8078-12071229aae0: [Errno 30] Read-only file system: '/mnt/nfs/test_72ea701e-1d0f-401d-8078-12071229aae0'
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-1kb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_4d9a8e49-a9a5-4128-ac5b-e5c2956d300e'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_4d9a8e49-a9a5-4128-ac5b-e5c2956d300e: [Errno 30] Read-only file system: '/mnt/nfs/test_4d9a8e49-a9a5-4128-ac5b-e5c2956d300e'
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-128kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_e6748884-a19e-4dd2-89b2-f42bb8ace32f'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_e6748884-a19e-4dd2-89b2-f42bb8ace32f: [Errno 30] Read-only file system: '/mnt/nfs/test_e6748884-a19e-4dd2-89b2-f42bb8ace32f'
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-256kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_c815a9cd-e31e-4024-a366-bd4461c46aa7'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_c815a9cd-e31e-4024-a366-bd4461c46aa7: [Errno 30] Read-only file system: '/mnt/nfs/test_c815a9cd-e31e-4024-a366-bd4461c46aa7'
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-512kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_2b0c2603-a18c-4a1f-b5c8-667cd7e2d263'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_2b0c2603-a18c-4a1f-b5c8-667cd7e2d263: [Errno 30] Read-only file system: '/mnt/nfs/test_2b0c2603-a18c-4a1f-b5c8-667cd7e2d263'
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-1mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_cee45344-3eb6-42b4-856c-d7fffe50b4df'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_cee45344-3eb6-42b4-856c-d7fffe50b4df: [Errno 30] Read-only file system: '/mnt/nfs/test_cee45344-3eb6-42b4-856c-d7fffe50b4df'
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-2mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_fe1a1ce0-818d-4468-997c-9cd073670617'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_fe1a1ce0-818d-4468-997c-9cd073670617: [Errno 30] Read-only file system: '/mnt/nfs/test_fe1a1ce0-818d-4468-997c-9cd073670617'
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-4mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_ca2663c0-c612-4749-a8d0-6ca2744eee02'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_ca2663c0-c612-4749-a8d0-6ca2744eee02: [Errno 30] Read-only file system: '/mnt/nfs/test_ca2663c0-c612-4749-a8d0-6ca2744eee02'
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-512b] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_d545ca3d-b45f-43a6-ba3d-5402bf378672'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_d545ca3d-b45f-43a6-ba3d-5402bf378672: [Errno 30] Read-only file system: '/mnt/nfs/test_d545ca3d-b45f-43a6-ba3d-5402bf378672'
+__________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-1kb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_db1168c3-8c44-4210-8791-20c95fd94676'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_db1168c3-8c44-4210-8791-20c95fd94676: [Errno 30] Read-only file system: '/mnt/nfs/test_db1168c3-8c44-4210-8791-20c95fd94676'
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-128kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_faa1c57d-8b60-42d5-a89b-edd3f0a26f22'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_faa1c57d-8b60-42d5-a89b-edd3f0a26f22: [Errno 30] Read-only file system: '/mnt/nfs/test_faa1c57d-8b60-42d5-a89b-edd3f0a26f22'
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-256kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_ed2657a0-941f-49ce-b2e2-1cd4a17b8339'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_ed2657a0-941f-49ce-b2e2-1cd4a17b8339: [Errno 30] Read-only file system: '/mnt/nfs/test_ed2657a0-941f-49ce-b2e2-1cd4a17b8339'
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-512kb] _________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_2594f953-1266-4d5b-88dd-0223886df659'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_2594f953-1266-4d5b-88dd-0223886df659: [Errno 30] Read-only file system: '/mnt/nfs/test_2594f953-1266-4d5b-88dd-0223886df659'
+__________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-1mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_ce44a476-ebc4-46f9-b7ba-5137a5a9f7d2'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_ce44a476-ebc4-46f9-b7ba-5137a5a9f7d2: [Errno 30] Read-only file system: '/mnt/nfs/test_ce44a476-ebc4-46f9-b7ba-5137a5a9f7d2'
+__________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-2mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_bcccda4c-f951-45aa-b8f3-1c70845e8be6'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_bcccda4c-f951-45aa-b8f3-1c70845e8be6: [Errno 30] Read-only file system: '/mnt/nfs/test_bcccda4c-f951-45aa-b8f3-1c70845e8be6'
+__________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-4mb] __________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_09ceebaf-3661-4459-a0cc-b275e30efb0c'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_09ceebaf-3661-4459-a0cc-b275e30efb0c: [Errno 30] Read-only file system: '/mnt/nfs/test_09ceebaf-3661-4459-a0cc-b275e30efb0c'
+___________ ERROR at setup of test_data_integrity[random-None-512b] ____________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_2d0b0ca3-044e-45e0-ab52-bb407d412fb1'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_2d0b0ca3-044e-45e0-ab52-bb407d412fb1: [Errno 30] Read-only file system: '/mnt/nfs/test_2d0b0ca3-044e-45e0-ab52-bb407d412fb1'
+____________ ERROR at setup of test_data_integrity[random-None-1kb] ____________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_d5f2cf29-afde-4544-b89a-87692b44441b'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_d5f2cf29-afde-4544-b89a-87692b44441b: [Errno 30] Read-only file system: '/mnt/nfs/test_d5f2cf29-afde-4544-b89a-87692b44441b'
+___________ ERROR at setup of test_data_integrity[random-None-128kb] ___________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_9c0b9abe-b3e7-4f8d-a55e-cd8ed19f9dda'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_9c0b9abe-b3e7-4f8d-a55e-cd8ed19f9dda: [Errno 30] Read-only file system: '/mnt/nfs/test_9c0b9abe-b3e7-4f8d-a55e-cd8ed19f9dda'
+___________ ERROR at setup of test_data_integrity[random-None-256kb] ___________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_7498d905-c5f0-41a1-b2b1-dc346168d0a3'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_7498d905-c5f0-41a1-b2b1-dc346168d0a3: [Errno 30] Read-only file system: '/mnt/nfs/test_7498d905-c5f0-41a1-b2b1-dc346168d0a3'
+___________ ERROR at setup of test_data_integrity[random-None-512kb] ___________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_db35945f-b4b3-4985-819c-dc2440af54b7'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_db35945f-b4b3-4985-819c-dc2440af54b7: [Errno 30] Read-only file system: '/mnt/nfs/test_db35945f-b4b3-4985-819c-dc2440af54b7'
+____________ ERROR at setup of test_data_integrity[random-None-1mb] ____________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_deab5222-9075-4472-bd08-dd86406017bc'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_deab5222-9075-4472-bd08-dd86406017bc: [Errno 30] Read-only file system: '/mnt/nfs/test_deab5222-9075-4472-bd08-dd86406017bc'
+____________ ERROR at setup of test_data_integrity[random-None-2mb] ____________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_b81dbde0-3cbe-4e70-bd88-ef66cb621532'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_b81dbde0-3cbe-4e70-bd88-ef66cb621532: [Errno 30] Read-only file system: '/mnt/nfs/test_b81dbde0-3cbe-4e70-bd88-ef66cb621532'
+____________ ERROR at setup of test_data_integrity[random-None-4mb] ____________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_cead5b9c-04e3-4ebc-98ec-e84264951fe9'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_cead5b9c-04e3-4ebc-98ec-e84264951fe9: [Errno 30] Read-only file system: '/mnt/nfs/test_cead5b9c-04e3-4ebc-98ec-e84264951fe9'
+___________________ ERROR at setup of test_timestamps_update ___________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_3395741f-7794-4f57-8d1d-56de5aa05ff4'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_3395741f-7794-4f57-8d1d-56de5aa05ff4: [Errno 30] Read-only file system: '/mnt/nfs/test_3395741f-7794-4f57-8d1d-56de5aa05ff4'
+____________________ ERROR at setup of test_utime_roundtrip ____________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_0a18d3bb-83b6-4ee7-97d4-1a5948990271'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_0a18d3bb-83b6-4ee7-97d4-1a5948990271: [Errno 30] Read-only file system: '/mnt/nfs/test_0a18d3bb-83b6-4ee7-97d4-1a5948990271'
+_______________ ERROR at setup of test_network_latency_detection _______________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_0884f08a-dc8e-4b5e-9cd2-fea01142d93b'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_0884f08a-dc8e-4b5e-9cd2-fea01142d93b: [Errno 30] Read-only file system: '/mnt/nfs/test_0884f08a-dc8e-4b5e-9cd2-fea01142d93b'
+________________ ERROR at setup of test_network_loss_detection _________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_db097029-38fb-4bf3-b7b4-885ed66db0e5'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_db097029-38fb-4bf3-b7b4-885ed66db0e5: [Errno 30] Read-only file system: '/mnt/nfs/test_db097029-38fb-4bf3-b7b4-885ed66db0e5'
+______________ ERROR at setup of test_read_only_export_detection _______________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_39ae9dc0-d7a1-4505-bdfe-42931acdd1f6'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_39ae9dc0-d7a1-4505-bdfe-42931acdd1f6: [Errno 30] Read-only file system: '/mnt/nfs/test_39ae9dc0-d7a1-4505-bdfe-42931acdd1f6'
+_________________ ERROR at setup of test_root_squash_detection _________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_bd5c75e3-7f8e-4343-972e-48553fe5d339'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_bd5c75e3-7f8e-4343-972e-48553fe5d339: [Errno 30] Read-only file system: '/mnt/nfs/test_bd5c75e3-7f8e-4343-972e-48553fe5d339'
+__________________ ERROR at setup of test_disk_full_detection __________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_ae749f6b-14de-4069-8743-3be233778d4c'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_ae749f6b-14de-4069-8743-3be233778d4c: [Errno 30] Read-only file system: '/mnt/nfs/test_ae749f6b-14de-4069-8743-3be233778d4c'
+______________ ERROR at setup of test_inode_exhaustion_detection _______________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_28fbc8cf-7a9c-4f26-886a-9213cbfeca63'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_28fbc8cf-7a9c-4f26-886a-9213cbfeca63: [Errno 30] Read-only file system: '/mnt/nfs/test_28fbc8cf-7a9c-4f26-886a-9213cbfeca63'
+_______________ ERROR at setup of test_server_restart_detection ________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_6945526a-d78b-4763-9165-2c8ed0fad2d1'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_6945526a-d78b-4763-9165-2c8ed0fad2d1: [Errno 30] Read-only file system: '/mnt/nfs/test_6945526a-d78b-4763-9165-2c8ed0fad2d1'
+_________________ ERROR at setup of test_write_throughput[1MB] _________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_27cf4cb7-02ec-44b1-9dc1-dd58ad0c9237'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_27cf4cb7-02ec-44b1-9dc1-dd58ad0c9237: [Errno 30] Read-only file system: '/mnt/nfs/test_27cf4cb7-02ec-44b1-9dc1-dd58ad0c9237'
+_________________ ERROR at setup of test_write_throughput[5MB] _________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_7b392151-2d19-4761-9138-e441ccca3e70'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_7b392151-2d19-4761-9138-e441ccca3e70: [Errno 30] Read-only file system: '/mnt/nfs/test_7b392151-2d19-4761-9138-e441ccca3e70'
+________________ ERROR at setup of test_write_throughput[10MB] _________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_004d4194-a83d-4d6e-aa26-231cd5b3b44e'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_004d4194-a83d-4d6e-aa26-231cd5b3b44e: [Errno 30] Read-only file system: '/mnt/nfs/test_004d4194-a83d-4d6e-aa26-231cd5b3b44e'
+_________________ ERROR at setup of test_read_throughput[1MB] __________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_093513ef-c373-4bba-919f-017a30eaaf53'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_093513ef-c373-4bba-919f-017a30eaaf53: [Errno 30] Read-only file system: '/mnt/nfs/test_093513ef-c373-4bba-919f-017a30eaaf53'
+_________________ ERROR at setup of test_read_throughput[5MB] __________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_b62e8870-32be-4468-8649-c7cdc7ab7a70'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_b62e8870-32be-4468-8649-c7cdc7ab7a70: [Errno 30] Read-only file system: '/mnt/nfs/test_b62e8870-32be-4468-8649-c7cdc7ab7a70'
+_________________ ERROR at setup of test_read_throughput[10MB] _________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_55aa7393-9759-4705-9baa-b85b71b815f6'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_55aa7393-9759-4705-9baa-b85b71b815f6: [Errno 30] Read-only file system: '/mnt/nfs/test_55aa7393-9759-4705-9baa-b85b71b815f6'
+_______________ ERROR at setup of test_sequential_io_throughput ________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_6d347a98-9191-427b-9ae1-32255f93c493'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_6d347a98-9191-427b-9ae1-32255f93c493: [Errno 30] Read-only file system: '/mnt/nfs/test_6d347a98-9191-427b-9ae1-32255f93c493'
+__________________ ERROR at setup of test_small_file_latency ___________________
+conftest.py:28: in test_dir
+    os.makedirs(path, exist_ok=True)
+/usr/local/lib/python3.9/os.py:225: in makedirs
+    mkdir(name, mode)
+E   OSError: [Errno 30] Read-only file system: '/mnt/nfs/test_cfe692cb-4e3c-4d5f-8cf4-d5f0ef83204f'
+
+During handling of the above exception, another exception occurred:
+conftest.py:30: in test_dir
+    pytest.fail(f"Failed to create test dir {path}: {e}")
+E   Failed: Failed to create test dir /mnt/nfs/test_cfe692cb-4e3c-4d5f-8cf4-d5f0ef83204f: [Errno 30] Read-only file system: '/mnt/nfs/test_cfe692cb-4e3c-4d5f-8cf4-d5f0ef83204f'
+=============================== warnings summary ===============================
+test_advanced.py:7
+  /app/test_advanced.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.requires_permissions - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_permissions
+
+test_advanced.py:37
+  /app/test_advanced.py:37: PytestUnknownMarkWarning: Unknown pytest.mark.requires_lockd - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_lockd
+
+test_off_nominal_network.py:17
+  /app/test_off_nominal_network.py:17: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_network.py:35
+  /app/test_off_nominal_network.py:35: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_nfs.py:5
+  /app/test_off_nominal_nfs.py:5: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_nfs.py:18
+  /app/test_off_nominal_nfs.py:18: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_resource.py:6
+  /app/test_off_nominal_resource.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_resource.py:26
+  /app/test_off_nominal_resource.py:26: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_server.py:5
+  /app/test_off_nominal_server.py:5: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_performance.py:23
+  /app/test_performance.py:23: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+test_performance.py:49
+  /app/test_performance.py:49: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+test_performance.py:79
+  /app/test_performance.py:79: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+test_performance.py:113
+  /app/test_performance.py:113: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--------------------------------- JSON report ----------------------------------
+report saved to: reports/2026-01-30_15-12-17-faults-network_loss_10.json
+============================== slowest durations ===============================
+0.41s setup    test_data_integrity.py::test_data_integrity[random-None-1kb]
+0.41s setup    test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb]
+0.21s setup    test_performance.py::test_write_throughput[5MB]
+0.21s setup    test_concurrent.py::test_concurrent_writes
+0.21s setup    test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+0.21s setup    test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+0.21s setup    test_data_integrity.py::test_data_integrity[random-None-256kb]
+0.20s setup    test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb]
+
+(120 durations < 0.005s hidden.  Use -vv to show these durations.)
+- Generated html report: file:///app/reports/2026-01-30_15-12-17-faults-network_loss_10.html -
+=========================== short test summary info ============================
+ERROR test_advanced.py::test_permissions - Failed: Failed to create test dir ...
+ERROR test_advanced.py::test_file_locking - Failed: Failed to create test dir...
+ERROR test_basic_io.py::test_file_create_read_write - Failed: Failed to creat...
+ERROR test_basic_io.py::test_file_append - Failed: Failed to create test dir ...
+ERROR test_basic_io.py::test_directory_operations - Failed: Failed to create ...
+ERROR test_basic_io.py::test_large_file_io - Failed: Failed to create test di...
+ERROR test_concurrent.py::test_concurrent_writes - Failed: Failed to create t...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b] - Fai...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b] - Fai...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b] - Fai...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b] - Fai...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[random-None-512b] - Failed:...
+ERROR test_data_integrity.py::test_data_integrity[random-None-1kb] - Failed: ...
+ERROR test_data_integrity.py::test_data_integrity[random-None-128kb] - Failed...
+ERROR test_data_integrity.py::test_data_integrity[random-None-256kb] - Failed...
+ERROR test_data_integrity.py::test_data_integrity[random-None-512kb] - Failed...
+ERROR test_data_integrity.py::test_data_integrity[random-None-1mb] - Failed: ...
+ERROR test_data_integrity.py::test_data_integrity[random-None-2mb] - Failed: ...
+ERROR test_data_integrity.py::test_data_integrity[random-None-4mb] - Failed: ...
+ERROR test_metadata.py::test_timestamps_update - Failed: Failed to create tes...
+ERROR test_metadata.py::test_utime_roundtrip - Failed: Failed to create test ...
+ERROR test_off_nominal_network.py::test_network_latency_detection - Failed: F...
+ERROR test_off_nominal_network.py::test_network_loss_detection - Failed: Fail...
+ERROR test_off_nominal_nfs.py::test_read_only_export_detection - Failed: Fail...
+ERROR test_off_nominal_nfs.py::test_root_squash_detection - Failed: Failed to...
+ERROR test_off_nominal_resource.py::test_disk_full_detection - Failed: Failed...
+ERROR test_off_nominal_resource.py::test_inode_exhaustion_detection - Failed:...
+ERROR test_off_nominal_server.py::test_server_restart_detection - Failed: Fai...
+ERROR test_performance.py::test_write_throughput[1MB] - Failed: Failed to cre...
+ERROR test_performance.py::test_write_throughput[5MB] - Failed: Failed to cre...
+ERROR test_performance.py::test_write_throughput[10MB] - Failed: Failed to cr...
+ERROR test_performance.py::test_read_throughput[1MB] - Failed: Failed to crea...
+ERROR test_performance.py::test_read_throughput[5MB] - Failed: Failed to crea...
+ERROR test_performance.py::test_read_throughput[10MB] - Failed: Failed to cre...
+ERROR test_performance.py::test_sequential_io_throughput - Failed: Failed to ...
+ERROR test_performance.py::test_small_file_latency - Failed: Failed to create...
+======================= 13 warnings, 64 errors in 4.77s ========================

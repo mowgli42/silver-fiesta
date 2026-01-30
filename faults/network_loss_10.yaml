@@ -1,0 +1,6 @@
+name: network_loss_10
+type: netem
+description: 10% packet loss between client and server
+netem:
+  loss: "10%"
+

@@ -1,0 +1,678 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.0, pluggy-1.6.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /app
+configfile: pytest.ini
+collecting ... collected 50 items
+
+test_advanced.py::test_permissions ERROR
+test_advanced.py::test_file_locking ERROR
+test_basic_io.py::test_file_create_read_write ERROR
+test_basic_io.py::test_file_append ERROR
+test_basic_io.py::test_directory_operations ERROR
+test_basic_io.py::test_large_file_io ERROR
+test_concurrent.py::test_concurrent_writes ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-512b] ERROR
+test_data_integrity.py::test_data_integrity[random-None-1kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-128kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-256kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-512kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-1mb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-2mb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-4mb] ERROR
+test_metadata.py::test_timestamps_update ERROR
+test_metadata.py::test_utime_roundtrip ERROR
+test_performance.py::test_large_file_throughput ERROR
+
+==================================== ERRORS ====================================
+______________________ ERROR at setup of test_permissions ______________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_____________________ ERROR at setup of test_file_locking ______________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+________________ ERROR at setup of test_file_create_read_write _________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+______________________ ERROR at setup of test_file_append ______________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________________ ERROR at setup of test_directory_operations __________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_____________________ ERROR at setup of test_large_file_io _____________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+___________________ ERROR at setup of test_concurrent_writes ___________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512b] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1kb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-128kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-256kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-2mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-4mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-512b] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-1kb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-128kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-256kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-512kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-1mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-2mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-4mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-512b] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-1kb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-128kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-256kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-512kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-1mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-2mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-4mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-512b] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-1kb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-128kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-256kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-512kb] _________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-1mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-2mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+__________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-4mb] __________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+___________ ERROR at setup of test_data_integrity[random-None-512b] ____________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+____________ ERROR at setup of test_data_integrity[random-None-1kb] ____________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+___________ ERROR at setup of test_data_integrity[random-None-128kb] ___________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+___________ ERROR at setup of test_data_integrity[random-None-256kb] ___________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+___________ ERROR at setup of test_data_integrity[random-None-512kb] ___________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+____________ ERROR at setup of test_data_integrity[random-None-1mb] ____________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+____________ ERROR at setup of test_data_integrity[random-None-2mb] ____________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+____________ ERROR at setup of test_data_integrity[random-None-4mb] ____________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+___________________ ERROR at setup of test_timestamps_update ___________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+____________________ ERROR at setup of test_utime_roundtrip ____________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+_________________ ERROR at setup of test_large_file_throughput _________________
+
+    @pytest.fixture(scope="session")
+    def nfs_root():
+        if not os.path.exists(MOUNT_POINT):
+            pytest.fail(f"NFS mount point {MOUNT_POINT} does not exist.")
+        if not os.path.ismount(MOUNT_POINT):
+>           pytest.fail(f"NFS mount point {MOUNT_POINT} is not mounted.")
+E           Failed: NFS mount point /mnt/nfs is not mounted.
+
+conftest.py:13: Failed
+=============================== warnings summary ===============================
+test_advanced.py:7
+  /app/test_advanced.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.requires_permissions - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_permissions
+
+test_advanced.py:37
+  /app/test_advanced.py:37: PytestUnknownMarkWarning: Unknown pytest.mark.requires_lockd - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_lockd
+
+test_performance.py:6
+  /app/test_performance.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================== slowest durations ===============================
+
+(100 durations < 0.005s hidden.  Use -vv to show these durations.)
+=========================== short test summary info ============================
+ERROR test_advanced.py::test_permissions - Failed: NFS mount point /mnt/nfs i...
+ERROR test_advanced.py::test_file_locking - Failed: NFS mount point /mnt/nfs ...
+ERROR test_basic_io.py::test_file_create_read_write - Failed: NFS mount point...
+ERROR test_basic_io.py::test_file_append - Failed: NFS mount point /mnt/nfs i...
+ERROR test_basic_io.py::test_directory_operations - Failed: NFS mount point /...
+ERROR test_basic_io.py::test_large_file_io - Failed: NFS mount point /mnt/nfs...
+ERROR test_concurrent.py::test_concurrent_writes - Failed: NFS mount point /m...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b] - Fai...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b] - Fai...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b] - Fai...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b] - Fai...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb] - Fa...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb] - Fail...
+ERROR test_data_integrity.py::test_data_integrity[random-None-512b] - Failed:...
+ERROR test_data_integrity.py::test_data_integrity[random-None-1kb] - Failed: ...
+ERROR test_data_integrity.py::test_data_integrity[random-None-128kb] - Failed...
+ERROR test_data_integrity.py::test_data_integrity[random-None-256kb] - Failed...
+ERROR test_data_integrity.py::test_data_integrity[random-None-512kb] - Failed...
+ERROR test_data_integrity.py::test_data_integrity[random-None-1mb] - Failed: ...
+ERROR test_data_integrity.py::test_data_integrity[random-None-2mb] - Failed: ...
+ERROR test_data_integrity.py::test_data_integrity[random-None-4mb] - Failed: ...
+ERROR test_metadata.py::test_timestamps_update - Failed: NFS mount point /mnt...
+ERROR test_metadata.py::test_utime_roundtrip - Failed: NFS mount point /mnt/n...
+ERROR test_performance.py::test_large_file_throughput - Failed: NFS mount poi...
+======================== 3 warnings, 50 errors in 0.58s ========================

@@ -1,0 +1,5 @@
+name: nfs_badpath
+type: nfs_export
+description: Export a non-existent path
+exports_file: exports_badpath
+

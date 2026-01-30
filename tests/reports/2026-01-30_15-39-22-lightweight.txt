@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.0, pluggy-1.6.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+metadata: {'Python': '3.9.25', 'Platform': 'Linux-6.17.9-arch1-1-x86_64-with-glibc2.41', 'Packages': {'pytest': '7.4.0', 'pluggy': '1.6.0'}, 'Plugins': {'timeout': '2.2.0', 'metadata': '3.1.1', 'benchmark': '4.0.0', 'json-report': '1.5.0', 'html': '4.1.1'}}
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /app
+configfile: pytest.ini
+plugins: timeout-2.2.0, metadata-3.1.1, benchmark-4.0.0, json-report-1.5.0, html-4.1.1
+collecting ... collected 64 items
+
+test_advanced.py::test_permissions collected 64 items
+
+test_advanced.py::test_permissions Unmounting /mnt/nfs...

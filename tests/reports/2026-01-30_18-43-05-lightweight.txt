@@ -1,0 +1,13 @@
+[DEBUG 18:43:05] === Test Runner Startup ===
+[DEBUG 18:43:05] SERVER_HOST=nfs-server-lightweight
+[DEBUG 18:43:05] NFS_SERVER env=nfs-server-lightweight
+[DEBUG 18:43:05] NFS_SERVER_TYPE=lightweight
+[DEBUG 18:43:05] Starting server connectivity checks
+[DEBUG 18:43:05] Attempting to resolve hostname: nfs-server-lightweight
+[DEBUG 18:43:05] Hostname resolved: 172.18.0.3      nfs-server-lightweight
+[DEBUG 18:43:05] Network fault scenario detected - using TCP connection check
+[DEBUG 18:43:05] TCP connection attempt 1 failed for nfs-server-lightweight:2049
+[DEBUG 18:43:07] TCP connection attempt 2 failed for nfs-server-lightweight:2049
+[DEBUG 18:43:09] TCP connection attempt 3 failed for nfs-server-lightweight:2049
+[DEBUG 18:43:10] TCP connection to nfs-server-lightweight:2049 successful
+[DEBUG 18:43:10] NFS port 2049 is accessible

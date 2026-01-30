@@ -1,0 +1,43 @@
+==========================================
+NFS SERVER PERFORMANCE TEST SUMMARY
+==========================================
+Test Run: 2026-01-30_14-23-45
+Server Type: lightweight
+Server Host: nfs-server-lightweight
+NFS Version: 4
+Mount Options: vers=4,proto=tcp
+
+----------------------------------------
+TEST EXECUTION SUMMARY
+----------------------------------------
+
+----------------------------------------
+TEST EXECUTION LIST
+----------------------------------------
+
+All Tests Executed:
+ERROR: usage: pytest [options] [file_or_dir] [file_or_dir] [...]
+
+----------------------------------------
+PERFORMANCE METRICS
+----------------------------------------
+
+Test Counts by Category:
+  Total: 1
+  Passed: 0
+0
+  Failed: 0
+0
+  Skipped: 0
+0
+
+----------------------------------------
+REPORT FILES
+----------------------------------------
+Detailed Text Report: reports/2026-01-30_14-23-45-lightweight.txt
+HTML Report: reports/2026-01-30_14-23-45-lightweight.html
+JSON Report: reports/2026-01-30_14-23-45-lightweight.json
+This Summary: reports/2026-01-30_14-23-45-lightweight-summary.txt
+
+Exit Code: 4
+==========================================

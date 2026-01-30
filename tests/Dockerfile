@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy test code and runner
 COPY . .
-RUN chmod +x run_tests.sh
+RUN chmod +x run_tests.sh generate_performance_report.py diagnose_failures.py
 
 # Create mount point
 RUN mkdir -p /mnt/nfs

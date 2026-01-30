@@ -1,0 +1,9 @@
+[DEBUG 15:30:11] === Test Runner Startup ===
+[DEBUG 15:30:11] SERVER_HOST=nfs-server-lightweight
+[DEBUG 15:30:11] NFS_SERVER env=nfs-server-lightweight
+[DEBUG 15:30:11] NFS_SERVER_TYPE=lightweight
+[DEBUG 15:30:11] Starting server connectivity checks
+[DEBUG 15:30:11] Attempting to resolve hostname: nfs-server-lightweight
+[DEBUG 15:30:11] Hostname resolved: 172.18.0.2      nfs-server-lightweight
+[DEBUG 15:30:11] Ping successful to nfs-server-lightweight
+[DEBUG 15:30:11] NFS port 2049 is accessible

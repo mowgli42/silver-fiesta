@@ -1,0 +1,1546 @@
+[DEBUG 16:42:14] === Test Runner Startup ===
+[DEBUG 16:42:14] SERVER_HOST=nfs-server
+[DEBUG 16:42:14] NFS_SERVER env=nfs-server
+[DEBUG 16:42:14] NFS_SERVER_TYPE=kernel
+[DEBUG 16:42:14] Starting server connectivity checks
+[DEBUG 16:42:14] Attempting to resolve hostname: nfs-server
+[DEBUG 16:42:14] Hostname resolved: 172.18.0.2      nfs-server
+[DEBUG 16:42:14] Ping successful to nfs-server
+[DEBUG 16:42:14] NFS port 2049 is accessible
+==========================================
+NFS Server Performance Test Suite
+==========================================
+Server Type: kernel
+Server Host: nfs-server
+NFS Version: 4
+Mount Options: vers=4,proto=tcp
+Fault Profile: none
+Fault Class: none
+Expected Failures: 0
+Report Files:
+  - Detailed: reports/2026-01-30_16-42-14-kernel.txt
+  - HTML: reports/2026-01-30_16-42-14-kernel.html
+  - JSON: reports/2026-01-30_16-42-14-kernel.json
+  - Summary: reports/2026-01-30_16-42-14-kernel-summary.txt
+==========================================
+
+Starting test execution...
+Each test will be displayed as it runs.
+
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.0, pluggy-1.6.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+metadata: {'Python': '3.9.25', 'Platform': 'Linux-6.17.9-arch1-1-x86_64-with-glibc2.41', 'Packages': {'pytest': '7.4.0', 'pluggy': '1.6.0'}, 'Plugins': {'timeout': '2.2.0', 'metadata': '3.1.1', 'benchmark': '4.0.0', 'json-report': '1.5.0', 'html': '4.1.1'}}
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /app
+configfile: pytest.ini
+plugins: timeout-2.2.0, metadata-3.1.1, benchmark-4.0.0, json-report-1.5.0, html-4.1.1
+collecting ... ============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.0, pluggy-1.6.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+metadata: {'Python': '3.9.25', 'Platform': 'Linux-6.17.9-arch1-1-x86_64-with-glibc2.41', 'Packages': {'pytest': '7.4.0', 'pluggy': '1.6.0'}, 'Plugins': {'timeout': '2.2.0', 'metadata': '3.1.1', 'benchmark': '4.0.0', 'json-report': '1.5.0', 'html': '4.1.1'}}
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /app
+configfile: pytest.ini
+plugins: timeout-2.2.0, metadata-3.1.1, benchmark-4.0.0, json-report-1.5.0, html-4.1.1
+collecting ... collected 64 items
+
+test_advanced.py::test_permissions collected 64 items
+
+test_advanced.py::test_permissions 
+================================================================================
+Running test: test_advanced::test_permissions
+================================================================================
+
+================================================================================
+Running test: test_advanced::test_permissions
+================================================================================
+
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.522s)
+
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.522s)
+PASSEDPASSED
+test_advanced.py::test_file_locking 
+test_advanced.py::test_file_locking 
+================================================================================
+Running test: test_advanced::test_file_locking
+================================================================================
+
+================================================================================
+Running test: test_advanced::test_file_locking
+================================================================================
+
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.002s)
+
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.002s)
+PASSEDPASSED
+test_basic_io.py::test_file_create_read_write 
+test_basic_io.py::test_file_create_read_write 
+================================================================================
+Running test: test_basic_io::test_file_create_read_write
+================================================================================
+
+================================================================================
+Running test: test_basic_io::test_file_create_read_write
+================================================================================
+
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.003s)
+
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.003s)
+PASSEDPASSED
+test_basic_io.py::test_file_append 
+test_basic_io.py::test_file_append 
+================================================================================
+Running test: test_basic_io::test_file_append
+================================================================================
+
+================================================================================
+Running test: test_basic_io::test_file_append
+================================================================================
+
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.004s)
+
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.004s)
+PASSEDPASSED
+test_basic_io.py::test_directory_operations 
+test_basic_io.py::test_directory_operations 
+================================================================================
+Running test: test_basic_io::test_directory_operations
+================================================================================
+
+================================================================================
+Running test: test_basic_io::test_directory_operations
+================================================================================
+
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.003s)
+
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.003s)
+PASSEDPASSED
+test_basic_io.py::test_large_file_io 
+test_basic_io.py::test_large_file_io 
+================================================================================
+Running test: test_basic_io::test_large_file_io
+
+================================================================================
+Running test: test_basic_io::test_large_file_io
+================================================================================
+================================================================================
+
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.010s)
+
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.010s)
+PASSEDPASSED
+test_concurrent.py::test_concurrent_writes 
+test_concurrent.py::test_concurrent_writes 
+================================================================================
+Running test: test_concurrent::test_concurrent_writes
+================================================================================
+
+================================================================================
+Running test: test_concurrent::test_concurrent_writes
+================================================================================
+
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.029s)
+
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.029s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b] 
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.003s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.003s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb] 
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.001s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.001s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb] 
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.004s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.004s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb] 
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb] 
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]
+================================================================================
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.006s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.006s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb] 
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb] 
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.004s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.004s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb] 
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.009s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.009s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb] 
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]
+================================================================================
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.019s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.019s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb] 
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.027s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.027s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b] 
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.002s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.002s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb] 
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]
+================================================================================
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.002s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.002s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb] 
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb] 
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.004s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.004s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb] 
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.005s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.005s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb] 
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.005s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.005s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb] 
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.005s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.005s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb] 
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.012s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.012s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb] 
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.029s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.029s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b] 
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.002s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.002s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb] 
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb] 
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.005s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.005s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb] 
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.003s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.003s)
+PASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb] 
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb] 
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.004s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.004s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb] 
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.008s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.008s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb] 
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.019s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.019s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb] 
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.028s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.028s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b] 
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.002s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.002s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb] 
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb] 
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]: PASSED (0.002s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]: PASSED (0.002s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb] 
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb] 
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-128kb]
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-128kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-128kb]: PASSED (0.002s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-128kb]: PASSED (0.002s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb] 
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb] 
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-256kb]
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-256kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-256kb]: PASSED (0.006s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-256kb]: PASSED (0.006s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb] 
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-512kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-512kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512kb]: PASSED (0.006s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512kb]: PASSED (0.006s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb] 
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-1mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-1mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-1mb]: PASSED (0.005s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-1mb]: PASSED (0.005s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb] 
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-2mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-2mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-2mb]: PASSED (0.011s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-2mb]: PASSED (0.011s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb] 
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-4mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[0x0101-\x01\x01-4mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-4mb]: PASSED (0.030s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-4mb]: PASSED (0.030s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[random-None-512b] 
+test_data_integrity.py::test_data_integrity[random-None-512b] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-512b]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-512b]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-512b]: PASSED (0.002s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-512b]: PASSED (0.002s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[random-None-1kb] 
+test_data_integrity.py::test_data_integrity[random-None-1kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-1kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-1kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-1kb]: PASSED (0.002s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-1kb]: PASSED (0.002s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[random-None-128kb] 
+test_data_integrity.py::test_data_integrity[random-None-128kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-128kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-128kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-128kb]: PASSED (0.002s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-128kb]: PASSED (0.002s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[random-None-256kb] 
+test_data_integrity.py::test_data_integrity[random-None-256kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-256kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-256kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-256kb]: PASSED (0.003s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-256kb]: PASSED (0.003s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[random-None-512kb] 
+test_data_integrity.py::test_data_integrity[random-None-512kb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-512kb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-512kb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-512kb]: PASSED (0.011s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-512kb]: PASSED (0.011s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[random-None-1mb] 
+test_data_integrity.py::test_data_integrity[random-None-1mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-1mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-1mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-1mb]: PASSED (0.007s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-1mb]: PASSED (0.007s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[random-None-2mb] 
+test_data_integrity.py::test_data_integrity[random-None-2mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-2mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-2mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-2mb]: PASSED (0.038s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-2mb]: PASSED (0.038s)
+PASSEDPASSED
+test_data_integrity.py::test_data_integrity[random-None-4mb] 
+test_data_integrity.py::test_data_integrity[random-None-4mb] 
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-4mb]
+================================================================================
+
+================================================================================
+Running test: test_data_integrity::test_data_integrity[random-None-4mb]
+================================================================================
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-4mb]: PASSED (0.047s)
+
+[TEST COMPLETE] test_data_integrity::test_data_integrity[random-None-4mb]: PASSED (0.047s)
+PASSEDPASSED
+test_metadata.py::test_timestamps_update 
+test_metadata.py::test_timestamps_update 
+================================================================================
+Running test: test_metadata::test_timestamps_update
+================================================================================
+
+================================================================================
+Running test: test_metadata::test_timestamps_update
+================================================================================
+
+[TEST COMPLETE] test_metadata::test_timestamps_update: PASSED (1.017s)
+
+[TEST COMPLETE] test_metadata::test_timestamps_update: PASSED (1.017s)
+PASSEDPASSED
+test_metadata.py::test_utime_roundtrip 
+test_metadata.py::test_utime_roundtrip 
+================================================================================
+Running test: test_metadata::test_utime_roundtrip
+================================================================================
+
+================================================================================
+Running test: test_metadata::test_utime_roundtrip
+================================================================================
+
+[TEST COMPLETE] test_metadata::test_utime_roundtrip: PASSED (0.004s)
+
+[TEST COMPLETE] test_metadata::test_utime_roundtrip: PASSED (0.004s)
+PASSEDPASSED
+test_off_nominal_network.py::test_network_latency_detection 
+test_off_nominal_network.py::test_network_latency_detection 
+================================================================================
+
+================================================================================
+Running test: test_off_nominal_network::test_network_latency_detection
+================================================================================
+Running test: test_off_nominal_network::test_network_latency_detection
+================================================================================
+
+[TEST COMPLETE] test_off_nominal_network::test_network_latency_detection: SKIPPED (0.000s)
+
+[TEST COMPLETE] test_off_nominal_network::test_network_latency_detection: SKIPPED (0.000s)
+SKIPPEDSKIPPED
+test_off_nominal_network.py::test_network_loss_detection 
+test_off_nominal_network.py::test_network_loss_detection 
+================================================================================
+Running test: test_off_nominal_network::test_network_loss_detection
+================================================================================
+
+================================================================================
+Running test: test_off_nominal_network::test_network_loss_detection
+================================================================================
+
+[TEST COMPLETE] test_off_nominal_network::test_network_loss_detection: SKIPPED (0.000s)
+
+[TEST COMPLETE] test_off_nominal_network::test_network_loss_detection: SKIPPED (0.000s)
+SKIPPED (No...)SKIPPED (No...)
+test_off_nominal_nfs.py::test_read_only_export_detection 
+test_off_nominal_nfs.py::test_read_only_export_detection 
+================================================================================
+Running test: test_off_nominal_nfs::test_read_only_export_detection
+================================================================================
+
+================================================================================
+Running test: test_off_nominal_nfs::test_read_only_export_detection
+================================================================================
+
+[TEST COMPLETE] test_off_nominal_nfs::test_read_only_export_detection: SKIPPED (0.000s)
+
+[TEST COMPLETE] test_off_nominal_nfs::test_read_only_export_detection: SKIPPED (0.000s)
+SKIPPED (No...)SKIPPED (No...)
+test_off_nominal_nfs.py::test_root_squash_detection 
+test_off_nominal_nfs.py::test_root_squash_detection 
+================================================================================
+Running test: test_off_nominal_nfs::test_root_squash_detection
+================================================================================
+
+================================================================================
+Running test: test_off_nominal_nfs::test_root_squash_detection
+================================================================================
+
+[TEST COMPLETE] test_off_nominal_nfs::test_root_squash_detection: SKIPPED (0.000s)
+
+[TEST COMPLETE] test_off_nominal_nfs::test_root_squash_detection: SKIPPED (0.000s)
+SKIPPED (Not a r...)SKIPPED (Not a r...)
+test_off_nominal_resource.py::test_disk_full_detection 
+test_off_nominal_resource.py::test_disk_full_detection 
+================================================================================
+Running test: test_off_nominal_resource::test_disk_full_detection
+================================================================================
+
+================================================================================
+Running test: test_off_nominal_resource::test_disk_full_detection
+================================================================================
+
+[TEST COMPLETE] test_off_nominal_resource::test_disk_full_detection: SKIPPED (0.000s)
+
+[TEST COMPLETE] test_off_nominal_resource::test_disk_full_detection: SKIPPED (0.000s)
+SKIPPED (Not ...)SKIPPED (Not ...)
+test_off_nominal_resource.py::test_inode_exhaustion_detection 
+test_off_nominal_resource.py::test_inode_exhaustion_detection 
+================================================================================
+Running test: test_off_nominal_resource::test_inode_exhaustion_detection
+================================================================================
+
+================================================================================
+Running test: test_off_nominal_resource::test_inode_exhaustion_detection
+================================================================================
+
+[TEST COMPLETE] test_off_nominal_resource::test_inode_exhaustion_detection: SKIPPED (0.000s)
+
+[TEST COMPLETE] test_off_nominal_resource::test_inode_exhaustion_detection: SKIPPED (0.000s)
+SKIPPEDSKIPPED
+test_off_nominal_server.py::test_server_restart_detection 
+test_off_nominal_server.py::test_server_restart_detection 
+================================================================================
+
+================================================================================
+Running test: test_off_nominal_server::test_server_restart_detection
+================================================================================
+Running test: test_off_nominal_server::test_server_restart_detection
+================================================================================
+
+[TEST COMPLETE] test_off_nominal_server::test_server_restart_detection: SKIPPED (0.000s)
+
+[TEST COMPLETE] test_off_nominal_server::test_server_restart_detection: SKIPPED (0.000s)
+SKIPPED (N...)SKIPPED (N...)
+test_performance.py::test_write_throughput[1MB] 
+test_performance.py::test_write_throughput[1MB] 
+================================================================================
+
+================================================================================
+Running test: test_performance::test_write_throughput[1MB]
+================================================================================
+Running test: test_performance::test_write_throughput[1MB]
+================================================================================
+
+[PERF] Write 1MB: 0.013s, Throughput: 75.19 MB/s
+
+[TEST COMPLETE] test_performance::test_write_throughput[1MB]: PASSED (0.017s)
+
+[PERF] Write 1MB: 0.013s, Throughput: 75.19 MB/s
+
+[TEST COMPLETE] test_performance::test_write_throughput[1MB]: PASSED (0.017s)
+PASSEDPASSED
+test_performance.py::test_write_throughput[5MB] 
+test_performance.py::test_write_throughput[5MB] 
+================================================================================
+Running test: test_performance::test_write_throughput[5MB]
+================================================================================
+
+================================================================================
+Running test: test_performance::test_write_throughput[5MB]
+================================================================================
+
+[PERF] Write 5MB: 0.058s, Throughput: 86.26 MB/s
+
+[TEST COMPLETE] test_performance::test_write_throughput[5MB]: PASSED (0.074s)
+
+[PERF] Write 5MB: 0.058s, Throughput: 86.26 MB/s
+
+[TEST COMPLETE] test_performance::test_write_throughput[5MB]: PASSED (0.074s)
+PASSEDPASSED
+test_performance.py::test_write_throughput[10MB] 
+test_performance.py::test_write_throughput[10MB] 
+================================================================================
+
+================================================================================
+Running test: test_performance::test_write_throughput[10MB]
+================================================================================
+Running test: test_performance::test_write_throughput[10MB]
+================================================================================
+
+[PERF] Write 10MB: 0.093s, Throughput: 107.95 MB/s
+
+[TEST COMPLETE] test_performance::test_write_throughput[10MB]: PASSED (0.127s)
+PASSED
+[PERF] Write 10MB: 0.093s, Throughput: 107.95 MB/s
+
+[TEST COMPLETE] test_performance::test_write_throughput[10MB]: PASSED (0.127s)
+PASSED
+test_performance.py::test_read_throughput[1MB] 
+test_performance.py::test_read_throughput[1MB] 
+================================================================================
+Running test: test_performance::test_read_throughput[1MB]
+================================================================================
+
+================================================================================
+Running test: test_performance::test_read_throughput[1MB]
+================================================================================
+
+[PERF] Read 1MB: 0.001s, Throughput: 704.45 MB/s
+
+[TEST COMPLETE] test_performance::test_read_throughput[1MB]: PASSED (0.016s)
+
+[PERF] Read 1MB: 0.001s, Throughput: 704.45 MB/s
+
+[TEST COMPLETE] test_performance::test_read_throughput[1MB]: PASSED (0.016s)
+PASSEDPASSED
+test_performance.py::test_read_throughput[5MB] 
+test_performance.py::test_read_throughput[5MB] 
+================================================================================
+
+================================================================================
+Running test: test_performance::test_read_throughput[5MB]
+================================================================================
+Running test: test_performance::test_read_throughput[5MB]
+================================================================================
+
+[PERF] Read 5MB: 0.006s, Throughput: 896.60 MB/s
+
+[TEST COMPLETE] test_performance::test_read_throughput[5MB]: PASSED (0.077s)
+
+[PERF] Read 5MB: 0.006s, Throughput: 896.60 MB/s
+
+[TEST COMPLETE] test_performance::test_read_throughput[5MB]: PASSED (0.077s)
+PASSEDPASSED
+test_performance.py::test_read_throughput[10MB] 
+test_performance.py::test_read_throughput[10MB] 
+================================================================================
+Running test: test_performance::test_read_throughput[10MB]
+================================================================================
+
+================================================================================
+Running test: test_performance::test_read_throughput[10MB]
+================================================================================
+
+[PERF] Read 10MB: 0.003s, Throughput: 2.80 GB/s
+
+[TEST COMPLETE] test_performance::test_read_throughput[10MB]: PASSED (0.074s)
+
+[PERF] Read 10MB: 0.003s, Throughput: 2.80 GB/s
+
+[TEST COMPLETE] test_performance::test_read_throughput[10MB]: PASSED (0.074s)
+PASSEDPASSED
+test_performance.py::test_sequential_io_throughput 
+test_performance.py::test_sequential_io_throughput 
+================================================================================
+Running test: test_performance::test_sequential_io_throughput
+================================================================================
+
+================================================================================
+Running test: test_performance::test_sequential_io_throughput
+================================================================================
+
+[PERF] Sequential I/O (10MB):
+  Write: 0.041s (246.86 MB/s)
+  Read: 0.004s (2.58 GB/s)
+  Total: 0.044s (451.52 MB/s)
+
+[TEST COMPLETE] test_performance::test_sequential_io_throughput: PASSED (0.072s)
+
+[PERF] Sequential I/O (10MB):
+  Write: 0.041s (246.86 MB/s)
+  Read: 0.004s (2.58 GB/s)
+  Total: 0.044s (451.52 MB/s)
+
+[TEST COMPLETE] test_performance::test_sequential_io_throughput: PASSED (0.072s)
+PASSEDPASSED
+test_performance.py::test_small_file_latency 
+test_performance.py::test_small_file_latency 
+================================================================================
+Running test: test_performance::test_small_file_latency
+================================================================================
+
+================================================================================
+Running test: test_performance::test_small_file_latency
+================================================================================
+
+[PERF] Small File Latency (1KB, 100 files):
+  Avg Write Latency: 1.93ms
+  Avg Read Latency: 0.21ms
+  Total Throughput: 936.66 KB/s
+
+[TEST COMPLETE] test_performance::test_small_file_latency: PASSED (0.217s)
+
+[PERF] Small File Latency (1KB, 100 files):
+  Avg Write Latency: 1.93ms
+  Avg Read Latency: 0.21ms
+  Total Throughput: 936.66 KB/s
+
+[TEST COMPLETE] test_performance::test_small_file_latency: PASSED (0.217s)
+PASSEDPASSED
+
+=============================== warnings summary ===============================
+test_advanced.py:7
+  /app/test_advanced.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.requires_permissions - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_permissions
+
+test_advanced.py:37
+  /app/test_advanced.py:37: PytestUnknownMarkWarning: Unknown pytest.mark.requires_lockd - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_lockd
+
+test_off_nominal_network.py:17
+  /app/test_off_nominal_network.py:17: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_network.py:35
+  /app/test_off_nominal_network.py:35: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_nfs.py:5
+  /app/test_off_nominal_nfs.py:5: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_nfs.py:18
+  /app/test_off_nominal_nfs.py:18: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_resource.py:6
+  /app/test_off_nominal_resource.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_resource.py:26
+  /app/test_off_nominal_resource.py:26: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_server.py:5
+  /app/test_off_nominal_server.py:5: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_performance.py:23
+  /app/test_performance.py:23: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+test_performance.py:49
+  /app/test_performance.py:49: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+test_performance.py:79
+  /app/test_performance.py:79: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+test_performance.py:113
+  /app/test_performance.py:113: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+--------------------------------- JSON report ----------------------------------
+report saved to: reports/2026-01-30_16-42-14-kernel.json
+============================== slowest durations ===============================
+103.52s call     test_advanced.py::test_permissions
+1.02s call     test_metadata.py::test_timestamps_update
+0.22s call     test_performance.py::test_small_file_latency
+0.13s call     test_performance.py::test_write_throughput[10MB]
+0.08s call     test_performance.py::test_read_throughput[5MB]
+0.07s call     test_performance.py::test_write_throughput[5MB]
+0.07s call     test_performance.py::test_read_throughput[10MB]
+0.07s call     test_performance.py::test_sequential_io_throughput
+0.05s call     test_data_integrity.py::test_data_integrity[random-None-4mb]
+0.04s call     test_data_integrity.py::test_data_integrity[random-None-2mb]
+0.03s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb]
+0.03s call     test_concurrent.py::test_concurrent_writes
+0.03s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb]
+0.03s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb]
+0.03s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+0.02s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+0.02s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb]
+0.02s call     test_performance.py::test_write_throughput[1MB]
+0.02s call     test_performance.py::test_read_throughput[1MB]
+0.01s teardown test_performance.py::test_small_file_latency
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb]
+0.01s call     test_data_integrity.py::test_data_integrity[random-None-512kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb]
+0.01s call     test_basic_io.py::test_large_file_io
+0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[random-None-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb]
+0.01s teardown test_performance.py::test_write_throughput[10MB]
+
+(158 durations < 0.005s hidden.  Use -vv to show these durations.)
+-- Generated html report: file:///app/reports/2026-01-30_16-42-14-kernel.html --
+=========================== short test summary info ============================
+PASSED test_advanced.py::test_permissions
+PASSED test_advanced.py::test_file_locking
+PASSED test_basic_io.py::test_file_create_read_write
+PASSED test_basic_io.py::test_file_append
+PASSED test_basic_io.py::test_directory_operations
+PASSED test_basic_io.py::test_large_file_io
+PASSED test_concurrent.py::test_concurrent_writes
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb]
+
+
+=============================== warnings summary ===============================
+test_advanced.py:7
+  /app/test_advanced.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.requires_permissions - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_permissions
+
+test_advanced.py:37
+  /app/test_advanced.py:37: PytestUnknownMarkWarning: Unknown pytest.mark.requires_lockd - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_lockd
+
+test_off_nominal_network.py:17
+  /app/test_off_nominal_network.py:17: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_network.py:35
+  /app/test_off_nominal_network.py:35: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_nfs.py:5
+  /app/test_off_nominal_nfs.py:5: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_nfs.py:18
+  /app/test_off_nominal_nfs.py:18: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_resource.py:6
+  /app/test_off_nominal_resource.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_resource.py:26
+  /app/test_off_nominal_resource.py:26: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_off_nominal_server.py:5
+  /app/test_off_nominal_server.py:5: PytestUnknownMarkWarning: Unknown pytest.mark.off_nominal - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.off_nominal
+
+test_performance.py:23
+  /app/test_performance.py:23: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+test_performance.py:49
+  /app/test_performance.py:49: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+test_performance.py:79
+  /app/test_performance.py:79: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+test_performance.py:113
+  /app/test_performance.py:113: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+--------------------------------- JSON report ----------------------------------
+report saved to: reports/2026-01-30_16-42-14-kernel.json
+============================== slowest durations ===============================
+103.52s call     test_advanced.py::test_permissions
+1.02s call     test_metadata.py::test_timestamps_update
+0.22s call     test_performance.py::test_small_file_latency
+0.13s call     test_performance.py::test_write_throughput[10MB]
+0.08s call     test_performance.py::test_read_throughput[5MB]
+0.07s call     test_performance.py::test_write_throughput[5MB]
+0.07s call     test_performance.py::test_read_throughput[10MB]
+0.07s call     test_performance.py::test_sequential_io_throughput
+0.05s call     test_data_integrity.py::test_data_integrity[random-None-4mb]
+0.04s call     test_data_integrity.py::test_data_integrity[random-None-2mb]
+0.03s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb]
+0.03s call     test_concurrent.py::test_concurrent_writes
+0.03s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb]
+0.03s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb]
+0.03s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+0.02s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+0.02s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb]
+0.02s call     test_performance.py::test_write_throughput[1MB]
+0.02s call     test_performance.py::test_read_throughput[1MB]
+0.01s teardown test_performance.py::test_small_file_latency
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb]
+0.01s call     test_data_integrity.py::test_data_integrity[random-None-512kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb]
+0.01s call     test_basic_io.py::test_large_file_io
+0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[random-None-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb]
+0.01s teardown test_performance.py::test_write_throughput[10MB]
+
+(158 durations < 0.005s hidden.  Use -vv to show these durations.)
+-- Generated html report: file:///app/reports/2026-01-30_16-42-14-kernel.html --
+=========================== short test summary info ============================
+PASSED test_advanced.py::test_permissions
+PASSED test_advanced.py::test_file_locking
+PASSED test_basic_io.py::test_file_create_read_write
+PASSED test_basic_io.py::test_file_append
+PASSED test_basic_io.py::test_directory_operations
+PASSED test_basic_io.py::test_large_file_io
+PASSED test_concurrent.py::test_concurrent_writes
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-512b]
+PASSED test_data_integrity.py::test_data_integrity[random-None-1kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-128kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-256kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-512kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-1mb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-2mb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-4mb]
+PASSED test_metadata.py::test_timestamps_update
+PASSED test_metadata.py::test_utime_roundtrip
+PASSED test_performance.py::test_write_throughput[1MB]
+PASSED test_performance.py::test_write_throughput[5MB]
+PASSED test_performance.py::test_write_throughput[10MB]
+PASSED test_performance.py::test_read_throughput[1MB]
+PASSED test_performance.py::test_read_throughput[5MB]
+PASSED test_performance.py::test_read_throughput[10MB]
+PASSED test_performance.py::test_sequential_io_throughput
+PASSED test_performance.py::test_small_file_latency
+SKIPPED [1] test_off_nominal_network.py:22: Not a latency fault profile.
+SKIPPED [1] test_off_nominal_network.py:40: Not a loss fault profile.
+SKIPPED [1] test_off_nominal_nfs.py:10: Not a read-only export profile.
+SKIPPED [1] test_off_nominal_nfs.py:23: Not a root_squash profile.
+SKIPPED [1] test_off_nominal_resource.py:11: Not a disk full profile.
+SKIPPED [1] test_off_nominal_resource.py:31: Not an inode exhaustion profile.
+SKIPPED [1] test_off_nominal_server.py:10: Not a server restart profile.
+============ 57 passed, 7 skipped, 13 warnings in 106.02s (0:01:46) ============
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-512b]
+PASSED test_data_integrity.py::test_data_integrity[random-None-1kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-128kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-256kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-512kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-1mb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-2mb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-4mb]
+PASSED test_metadata.py::test_timestamps_update
+PASSED test_metadata.py::test_utime_roundtrip
+PASSED test_performance.py::test_write_throughput[1MB]
+PASSED test_performance.py::test_write_throughput[5MB]
+PASSED test_performance.py::test_write_throughput[10MB]
+PASSED test_performance.py::test_read_throughput[1MB]
+PASSED test_performance.py::test_read_throughput[5MB]
+PASSED test_performance.py::test_read_throughput[10MB]
+PASSED test_performance.py::test_sequential_io_throughput
+PASSED test_performance.py::test_small_file_latency
+SKIPPED [1] test_off_nominal_network.py:22: Not a latency fault profile.
+SKIPPED [1] test_off_nominal_network.py:40: Not a loss fault profile.
+SKIPPED [1] test_off_nominal_nfs.py:10: Not a read-only export profile.
+SKIPPED [1] test_off_nominal_nfs.py:23: Not a root_squash profile.
+SKIPPED [1] test_off_nominal_resource.py:11: Not a disk full profile.
+SKIPPED [1] test_off_nominal_resource.py:31: Not an inode exhaustion profile.
+SKIPPED [1] test_off_nominal_server.py:10: Not a server restart profile.
+============ 57 passed, 7 skipped, 13 warnings in 106.02s (0:01:46) ============
+
+Generating performance analysis...
+
+Generating failure diagnosis...
+==========================================
+NFS SERVER PERFORMANCE TEST SUMMARY
+==========================================
+Test Run: 2026-01-30_16-42-14
+Server Type: kernel
+Server Host: nfs-server
+NFS Version: 4
+Mount Options: vers=4,proto=tcp
+Fault Profile: none
+Fault Class: none
+Expected Failures: 0
+
+----------------------------------------
+TEST EXECUTION SUMMARY
+----------------------------------------
+
+----------------------------------------
+TEST EXECUTION LIST
+----------------------------------------
+
+All Tests Executed:
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.522s)
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.522s)
+PASSEDPASSED
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.002s)
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.003s)
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.003s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.004s)
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.003s)
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.003s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.010s)
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.010s)
+PASSEDPASSED
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.029s)
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.029s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.003s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.003s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.001s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.001s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.006s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.006s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.009s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.009s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.019s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.019s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.027s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.027s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.012s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.012s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.029s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.029s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.003s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.003s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.008s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.008s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.019s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.019s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.028s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.028s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]: PASSED (0.002s)
+PASSEDPASSED
+
+----------------------------------------
+PERFORMANCE METRICS
+----------------------------------------
+
+Performance Measurements:
+  [PERF] Write 1MB: 0.013s, Throughput: 75.19 MB/s
+  [PERF] Write 1MB: 0.013s, Throughput: 75.19 MB/s
+  [PERF] Write 5MB: 0.058s, Throughput: 86.26 MB/s
+  [PERF] Write 5MB: 0.058s, Throughput: 86.26 MB/s
+  [PERF] Write 10MB: 0.093s, Throughput: 107.95 MB/s
+  [PERF] Write 10MB: 0.093s, Throughput: 107.95 MB/s
+  [PERF] Read 1MB: 0.001s, Throughput: 704.45 MB/s
+  [PERF] Read 1MB: 0.001s, Throughput: 704.45 MB/s
+  [PERF] Read 5MB: 0.006s, Throughput: 896.60 MB/s
+  [PERF] Read 5MB: 0.006s, Throughput: 896.60 MB/s
+  [PERF] Read 10MB: 0.003s, Throughput: 2.80 GB/s
+  [PERF] Read 10MB: 0.003s, Throughput: 2.80 GB/s
+  [PERF] Sequential I/O (10MB):
+  [PERF] Sequential I/O (10MB):
+  [PERF] Small File Latency (1KB, 100 files):
+  [PERF] Small File Latency (1KB, 100 files):
+
+Test Durations (slowest first):
+  103.52s call     test_advanced.py::test_permissions
+  1.02s call     test_metadata.py::test_timestamps_update
+  0.22s call     test_performance.py::test_small_file_latency
+  0.13s call     test_performance.py::test_write_throughput[10MB]
+  0.08s call     test_performance.py::test_read_throughput[5MB]
+  0.07s call     test_performance.py::test_write_throughput[5MB]
+  0.07s call     test_performance.py::test_read_throughput[10MB]
+  0.07s call     test_performance.py::test_sequential_io_throughput
+  0.05s call     test_data_integrity.py::test_data_integrity[random-None-4mb]
+  0.04s call     test_data_integrity.py::test_data_integrity[random-None-2mb]
+  0.03s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb]
+  0.03s call     test_concurrent.py::test_concurrent_writes
+  0.03s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb]
+  0.03s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb]
+  0.03s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+  0.02s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+  0.02s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb]
+  0.02s call     test_performance.py::test_write_throughput[1MB]
+  0.02s call     test_performance.py::test_read_throughput[1MB]
+  0.01s teardown test_performance.py::test_small_file_latency
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[random-None-512kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb]
+  0.01s call     test_basic_io.py::test_large_file_io
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[random-None-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb]
+  0.01s teardown test_performance.py::test_write_throughput[10MB]
+  PASSED test_advanced.py::test_permissions
+  PASSED test_advanced.py::test_file_locking
+  PASSED test_basic_io.py::test_file_create_read_write
+  PASSED test_basic_io.py::test_file_append
+  PASSED test_basic_io.py::test_directory_operations
+  PASSED test_basic_io.py::test_large_file_io
+  PASSED test_concurrent.py::test_concurrent_writes
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+  PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b]
+
+Summary Statistics:
+  ============ 57 passed, 7 skipped, 13 warnings in 106.02s (0:01:46) ============
+  ============ 57 passed, 7 skipped, 13 warnings in 106.02s (0:01:46) ============
+
+Test Counts by Category:
+  Total: 322
+  Passed: 287
+  Failed: 0
+0
+  Skipped: 35
+  Expected Failures: 0
+
+----------------------------------------
+REPORT FILES
+----------------------------------------
+Detailed Text Report: reports/2026-01-30_16-42-14-kernel.txt
+HTML Report: reports/2026-01-30_16-42-14-kernel.html
+JSON Report: reports/2026-01-30_16-42-14-kernel.json
+This Summary: reports/2026-01-30_16-42-14-kernel-summary.txt
+Performance Report: reports/2026-01-30_16-42-14-kernel-performance.txt
+Diagnosis Report: reports/2026-01-30_16-42-14-kernel-diagnosis.txt
+
+Exit Code: 0
+==========================================
+
+
+==========================================
+FAILURE DIAGNOSIS
+==========================================
+No known failure signatures detected.
+
+Tests completed with exit code: 0
+Unmounting /mnt/nfs...

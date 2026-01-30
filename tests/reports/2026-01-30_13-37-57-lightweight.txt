@@ -1,0 +1,162 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-7.4.0, pluggy-1.6.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /app
+configfile: pytest.ini
+collecting ... collected 50 items
+
+test_advanced.py::test_permissions PASSED
+test_advanced.py::test_file_locking PASSED
+test_basic_io.py::test_file_create_read_write PASSED
+test_basic_io.py::test_file_append PASSED
+test_basic_io.py::test_directory_operations PASSED
+test_basic_io.py::test_large_file_io PASSED
+test_concurrent.py::test_concurrent_writes PASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b] PASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb] PASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb] PASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb] PASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb] PASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb] PASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb] PASSED
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb] PASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b] PASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb] PASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb] PASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb] PASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb] PASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb] PASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb] PASSED
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb] PASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b] PASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb] PASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb] PASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb] PASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb] PASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb] PASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb] PASSED
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb] PASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b] PASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb] PASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb] PASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb] PASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb] PASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb] PASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb] PASSED
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb] PASSED
+test_data_integrity.py::test_data_integrity[random-None-512b] PASSED
+test_data_integrity.py::test_data_integrity[random-None-1kb] PASSED
+test_data_integrity.py::test_data_integrity[random-None-128kb] PASSED
+test_data_integrity.py::test_data_integrity[random-None-256kb] PASSED
+test_data_integrity.py::test_data_integrity[random-None-512kb] PASSED
+test_data_integrity.py::test_data_integrity[random-None-1mb] PASSED
+test_data_integrity.py::test_data_integrity[random-None-2mb] PASSED
+test_data_integrity.py::test_data_integrity[random-None-4mb] PASSED
+test_metadata.py::test_timestamps_update PASSED
+test_metadata.py::test_utime_roundtrip PASSED
+test_performance.py::test_large_file_throughput SKIPPED (Performance...)
+
+=============================== warnings summary ===============================
+test_advanced.py:7
+  /app/test_advanced.py:7: PytestUnknownMarkWarning: Unknown pytest.mark.requires_permissions - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_permissions
+
+test_advanced.py:37
+  /app/test_advanced.py:37: PytestUnknownMarkWarning: Unknown pytest.mark.requires_lockd - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.requires_lockd
+
+test_performance.py:6
+  /app/test_performance.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.performance - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.performance
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+============================== slowest durations ===============================
+103.53s call     test_advanced.py::test_permissions
+1.02s call     test_metadata.py::test_timestamps_update
+0.08s call     test_data_integrity.py::test_data_integrity[random-None-4mb]
+0.04s call     test_data_integrity.py::test_data_integrity[random-None-2mb]
+0.03s call     test_basic_io.py::test_large_file_io
+0.03s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+0.03s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb]
+0.03s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb]
+0.03s call     test_concurrent.py::test_concurrent_writes
+0.03s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb]
+0.02s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb]
+0.02s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb]
+0.02s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+0.02s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb]
+0.02s call     test_data_integrity.py::test_data_integrity[random-None-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[random-None-512kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb]
+0.01s call     test_data_integrity.py::test_data_integrity[random-None-256kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb]
+0.01s call     test_data_integrity.py::test_data_integrity[random-None-128kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb]
+0.01s call     test_basic_io.py::test_file_create_read_write
+0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb]
+0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb]
+0.01s call     test_basic_io.py::test_file_append
+0.01s call     test_advanced.py::test_file_locking
+0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+
+(116 durations < 0.005s hidden.  Use -vv to show these durations.)
+=========================== short test summary info ============================
+PASSED test_advanced.py::test_permissions
+PASSED test_advanced.py::test_file_locking
+PASSED test_basic_io.py::test_file_create_read_write
+PASSED test_basic_io.py::test_file_append
+PASSED test_basic_io.py::test_directory_operations
+PASSED test_basic_io.py::test_large_file_io
+PASSED test_concurrent.py::test_concurrent_writes
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb]
+PASSED test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-512b]
+PASSED test_data_integrity.py::test_data_integrity[random-None-1kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-128kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-256kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-512kb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-1mb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-2mb]
+PASSED test_data_integrity.py::test_data_integrity[random-None-4mb]
+PASSED test_metadata.py::test_timestamps_update
+PASSED test_metadata.py::test_utime_roundtrip
+SKIPPED [1] test_performance.py:20: Performance tests disabled. Set PERF_TESTS=1 to enable.
+============ 49 passed, 1 skipped, 3 warnings in 105.34s (0:01:45) =============

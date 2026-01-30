@@ -1,0 +1,198 @@
+==========================================
+NFS SERVER PERFORMANCE TEST SUMMARY
+==========================================
+Test Run: 2026-01-30_15-12-17
+Server Type: faults
+Server Host: nfs-server-faults
+NFS Version: 4
+Mount Options: vers=4,proto=tcp
+Fault Profile: network_loss_10
+Fault Class: nfs
+Expected Failures: 0
+
+----------------------------------------
+TEST EXECUTION SUMMARY
+----------------------------------------
+
+----------------------------------------
+TEST EXECUTION LIST
+----------------------------------------
+
+All Tests Executed:
+test_advanced.py::test_permissions ERROR
+test_advanced.py::test_file_locking ERROR
+test_basic_io.py::test_file_create_read_write ERROR
+test_basic_io.py::test_file_append ERROR
+test_basic_io.py::test_directory_operations ERROR
+test_basic_io.py::test_large_file_io ERROR
+test_concurrent.py::test_concurrent_writes ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb] ERROR
+test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-512b] ERROR
+test_data_integrity.py::test_data_integrity[random-None-1kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-128kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-256kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-512kb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-1mb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-2mb] ERROR
+test_data_integrity.py::test_data_integrity[random-None-4mb] ERROR
+test_metadata.py::test_timestamps_update ERROR
+test_metadata.py::test_utime_roundtrip ERROR
+test_off_nominal_network.py::test_network_latency_detection ERROR
+test_off_nominal_network.py::test_network_loss_detection ERROR
+test_off_nominal_nfs.py::test_read_only_export_detection ERROR
+test_off_nominal_nfs.py::test_root_squash_detection ERROR
+test_off_nominal_resource.py::test_disk_full_detection ERROR
+test_off_nominal_resource.py::test_inode_exhaustion_detection ERROR
+test_off_nominal_server.py::test_server_restart_detection ERROR
+test_performance.py::test_write_throughput[1MB] ERROR
+test_performance.py::test_write_throughput[5MB] ERROR
+test_performance.py::test_write_throughput[10MB] ERROR
+test_performance.py::test_read_throughput[1MB] ERROR
+test_performance.py::test_read_throughput[5MB] ERROR
+test_performance.py::test_read_throughput[10MB] ERROR
+test_performance.py::test_sequential_io_throughput ERROR
+test_performance.py::test_small_file_latency ERROR
+==================================== ERRORS ====================================
+______________________ ERROR at setup of test_permissions ______________________
+_____________________ ERROR at setup of test_file_locking ______________________
+________________ ERROR at setup of test_file_create_read_write _________________
+______________________ ERROR at setup of test_file_append ______________________
+_________________ ERROR at setup of test_directory_operations __________________
+_____________________ ERROR at setup of test_large_file_io _____________________
+___________________ ERROR at setup of test_concurrent_writes ___________________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512b] __________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1kb] __________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-128kb] _________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-256kb] _________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512kb] _________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1mb] __________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-2mb] __________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-4mb] __________
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-512b] __________
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-1kb] __________
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-128kb] _________
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-256kb] _________
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-512kb] _________
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-1mb] __________
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-2mb] __________
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-4mb] __________
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-512b] __________
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-1kb] __________
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-128kb] _________
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-256kb] _________
+_________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-512kb] _________
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-1mb] __________
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-2mb] __________
+__________ ERROR at setup of test_data_integrity[0x1010-\x10\x10-4mb] __________
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-512b] __________
+__________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-1kb] __________
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-128kb] _________
+_________ ERROR at setup of test_data_integrity[0x0101-\x01\x01-256kb] _________
+
+----------------------------------------
+PERFORMANCE METRICS
+----------------------------------------
+
+Test Durations (slowest first):
+  0.41s setup    test_data_integrity.py::test_data_integrity[random-None-1kb]
+  0.41s setup    test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb]
+  0.21s setup    test_performance.py::test_write_throughput[5MB]
+  0.21s setup    test_concurrent.py::test_concurrent_writes
+  0.21s setup    test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+  0.21s setup    test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+  0.21s setup    test_data_integrity.py::test_data_integrity[random-None-256kb]
+  0.20s setup    test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb]
+  ERROR test_advanced.py::test_permissions - Failed: Failed to create test dir ...
+  ERROR test_advanced.py::test_file_locking - Failed: Failed to create test dir...
+  ERROR test_basic_io.py::test_file_create_read_write - Failed: Failed to creat...
+  ERROR test_basic_io.py::test_file_append - Failed: Failed to create test dir ...
+  ERROR test_basic_io.py::test_directory_operations - Failed: Failed to create ...
+  ERROR test_basic_io.py::test_large_file_io - Failed: Failed to create test di...
+  ERROR test_concurrent.py::test_concurrent_writes - Failed: Failed to create t...
+  ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b] - Fai...
+  ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b] - Fai...
+  ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1kb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-128kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-1mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512b] - Fai...
+  ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1kb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-128kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-256kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-512kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512b] - Fai...
+  ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1kb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-128kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb] - Fa...
+  ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb] - Fail...
+  ERROR test_data_integrity.py::test_data_integrity[random-None-512b] - Failed:...
+  ERROR test_data_integrity.py::test_data_integrity[random-None-1kb] - Failed: ...
+  ERROR test_data_integrity.py::test_data_integrity[random-None-128kb] - Failed...
+
+Test Counts by Category:
+  Total: 193
+  Passed: 0
+0
+  Failed: 0
+0
+  Skipped: 0
+0
+  Expected Failures: 0
+
+----------------------------------------
+REPORT FILES
+----------------------------------------
+Detailed Text Report: reports/2026-01-30_15-12-17-faults-network_loss_10.txt
+HTML Report: reports/2026-01-30_15-12-17-faults-network_loss_10.html
+JSON Report: reports/2026-01-30_15-12-17-faults-network_loss_10.json
+This Summary: reports/2026-01-30_15-12-17-faults-network_loss_10-summary.txt
+
+Exit Code: 1
+==========================================

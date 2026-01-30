@@ -1,0 +1,7 @@
+name: network_blackhole
+type: iptables
+description: Drop all traffic to NFS port 2049
+iptables:
+  port: 2049
+  action: drop
+

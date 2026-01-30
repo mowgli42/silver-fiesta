@@ -1,0 +1,5 @@
+name: nfs_ro_export
+type: nfs_export
+description: Export /data read-only
+exports_file: exports_ro
+

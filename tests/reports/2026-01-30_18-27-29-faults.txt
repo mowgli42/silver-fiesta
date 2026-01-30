@@ -1,0 +1,9 @@
+[DEBUG 18:27:29] === Test Runner Startup ===
+[DEBUG 18:27:29] SERVER_HOST=nfs-server-faults
+[DEBUG 18:27:29] NFS_SERVER env=nfs-server-faults
+[DEBUG 18:27:29] NFS_SERVER_TYPE=faults
+[DEBUG 18:27:29] Starting server connectivity checks
+[DEBUG 18:27:29] Attempting to resolve hostname: nfs-server-faults
+[DEBUG 18:27:29] Hostname resolved: 172.18.0.3      nfs-server-faults
+[DEBUG 18:27:29] Ping successful to nfs-server-faults
+[DEBUG 18:27:29] NFS port 2049 is accessible

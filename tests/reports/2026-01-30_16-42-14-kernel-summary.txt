@@ -1,0 +1,220 @@
+==========================================
+NFS SERVER PERFORMANCE TEST SUMMARY
+==========================================
+Test Run: 2026-01-30_16-42-14
+Server Type: kernel
+Server Host: nfs-server
+NFS Version: 4
+Mount Options: vers=4,proto=tcp
+Fault Profile: none
+Fault Class: none
+Expected Failures: 0
+
+----------------------------------------
+TEST EXECUTION SUMMARY
+----------------------------------------
+
+----------------------------------------
+TEST EXECUTION LIST
+----------------------------------------
+
+All Tests Executed:
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.522s)
+[TEST COMPLETE] test_advanced::test_permissions: PASSED (103.522s)
+PASSEDPASSED
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.002s)
+[TEST COMPLETE] test_advanced::test_file_locking: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.003s)
+[TEST COMPLETE] test_basic_io::test_file_create_read_write: PASSED (0.003s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.004s)
+[TEST COMPLETE] test_basic_io::test_file_append: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.003s)
+[TEST COMPLETE] test_basic_io::test_directory_operations: PASSED (0.003s)
+PASSEDPASSED
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.010s)
+[TEST COMPLETE] test_basic_io::test_large_file_io: PASSED (0.010s)
+PASSEDPASSED
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.029s)
+[TEST COMPLETE] test_concurrent::test_concurrent_writes: PASSED (0.029s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.003s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512b]: PASSED (0.003s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.001s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1kb]: PASSED (0.001s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-128kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.006s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-256kb]: PASSED (0.006s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-512kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.009s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-1mb]: PASSED (0.009s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.019s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-2mb]: PASSED (0.019s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.027s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0000-\x00\x00-4mb]: PASSED (0.027s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512b]: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1kb]: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-128kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-256kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-512kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-1mb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.012s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-2mb]: PASSED (0.012s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.029s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1111-\x11\x11-4mb]: PASSED (0.029s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512b]: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.005s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-128kb]: PASSED (0.005s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.003s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-256kb]: PASSED (0.003s)
+PASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.004s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-512kb]: PASSED (0.004s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.008s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-1mb]: PASSED (0.008s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.019s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-2mb]: PASSED (0.019s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.028s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x1010-\x10\x10-4mb]: PASSED (0.028s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-512b]: PASSED (0.002s)
+PASSEDPASSED
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]: PASSED (0.002s)
+[TEST COMPLETE] test_data_integrity::test_data_integrity[0x0101-\x01\x01-1kb]: PASSED (0.002s)
+PASSEDPASSED
+
+----------------------------------------
+PERFORMANCE METRICS
+----------------------------------------
+
+Performance Measurements:
+  [PERF] Write 1MB: 0.013s, Throughput: 75.19 MB/s
+  [PERF] Write 1MB: 0.013s, Throughput: 75.19 MB/s
+  [PERF] Write 5MB: 0.058s, Throughput: 86.26 MB/s
+  [PERF] Write 5MB: 0.058s, Throughput: 86.26 MB/s
+  [PERF] Write 10MB: 0.093s, Throughput: 107.95 MB/s
+  [PERF] Write 10MB: 0.093s, Throughput: 107.95 MB/s
+  [PERF] Read 1MB: 0.001s, Throughput: 704.45 MB/s
+  [PERF] Read 1MB: 0.001s, Throughput: 704.45 MB/s
+  [PERF] Read 5MB: 0.006s, Throughput: 896.60 MB/s
+  [PERF] Read 5MB: 0.006s, Throughput: 896.60 MB/s
+  [PERF] Read 10MB: 0.003s, Throughput: 2.80 GB/s
+  [PERF] Read 10MB: 0.003s, Throughput: 2.80 GB/s
+  [PERF] Sequential I/O (10MB):
+  [PERF] Sequential I/O (10MB):
+  [PERF] Small File Latency (1KB, 100 files):
+  [PERF] Small File Latency (1KB, 100 files):
+
+Test Durations (slowest first):
+  103.52s call     test_advanced.py::test_permissions
+  1.02s call     test_metadata.py::test_timestamps_update
+  0.22s call     test_performance.py::test_small_file_latency
+  0.13s call     test_performance.py::test_write_throughput[10MB]
+  0.08s call     test_performance.py::test_read_throughput[5MB]
+  0.07s call     test_performance.py::test_write_throughput[5MB]
+  0.07s call     test_performance.py::test_read_throughput[10MB]
+  0.07s call     test_performance.py::test_sequential_io_throughput
+  0.05s call     test_data_integrity.py::test_data_integrity[random-None-4mb]
+  0.04s call     test_data_integrity.py::test_data_integrity[random-None-2mb]
+  0.03s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-4mb]
+  0.03s call     test_concurrent.py::test_concurrent_writes
+  0.03s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-4mb]
+  0.03s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-4mb]
+  0.03s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+  0.02s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+  0.02s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-2mb]
+  0.02s call     test_performance.py::test_write_throughput[1MB]
+  0.02s call     test_performance.py::test_read_throughput[1MB]
+  0.01s teardown test_performance.py::test_small_file_latency
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-2mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[random-None-512kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-2mb]
+  0.01s call     test_basic_io.py::test_large_file_io
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1010-\x10\x10-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[random-None-1mb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-256kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-512kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-256kb]
+  0.01s call     test_data_integrity.py::test_data_integrity[0x0101-\x01\x01-1mb]
+  0.01s teardown test_performance.py::test_write_throughput[10MB]
+  PASSED test_advanced.py::test_permissions
+  PASSED test_advanced.py::test_file_locking
+  PASSED test_basic_io.py::test_file_create_read_write
+  PASSED test_basic_io.py::test_file_append
+  PASSED test_basic_io.py::test_directory_operations
+  PASSED test_basic_io.py::test_large_file_io
+  PASSED test_concurrent.py::test_concurrent_writes
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512b]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1kb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-128kb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-256kb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-512kb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-1mb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-2mb]
+  PASSED test_data_integrity.py::test_data_integrity[0x0000-\x00\x00-4mb]
+  PASSED test_data_integrity.py::test_data_integrity[0x1111-\x11\x11-512b]
+
+Summary Statistics:
+  ============ 57 passed, 7 skipped, 13 warnings in 106.02s (0:01:46) ============
+  ============ 57 passed, 7 skipped, 13 warnings in 106.02s (0:01:46) ============
+
+Test Counts by Category:
+  Total: 322
+  Passed: 287
+  Failed: 0
+0
+  Skipped: 35
+  Expected Failures: 0
+
+----------------------------------------
+REPORT FILES
+----------------------------------------
+Detailed Text Report: reports/2026-01-30_16-42-14-kernel.txt
+HTML Report: reports/2026-01-30_16-42-14-kernel.html
+JSON Report: reports/2026-01-30_16-42-14-kernel.json
+This Summary: reports/2026-01-30_16-42-14-kernel-summary.txt
+Performance Report: reports/2026-01-30_16-42-14-kernel-performance.txt
+Diagnosis Report: reports/2026-01-30_16-42-14-kernel-diagnosis.txt
+
+Exit Code: 0
+==========================================

@@ -1,0 +1,122 @@
+==========================================
+NFS SERVER PERFORMANCE TEST SUMMARY
+==========================================
+Test Run: 2026-01-30_18-27-29
+Server Type: faults
+Server Host: nfs-server-faults
+NFS Version: 4
+Mount Options: vers=4,proto=tcp
+Fault Profile: network_loss_10
+Fault Class: nfs
+Expected Failures: 0
+
+----------------------------------------
+TEST EXECUTION SUMMARY
+----------------------------------------
+
+----------------------------------------
+TEST EXECUTION LIST
+----------------------------------------
+
+All Tests Executed:
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+ERRORERROR
+==================================== ERRORS ====================================
+______________________ ERROR at setup of test_permissions ______________________
+_____________________ ERROR at setup of test_file_locking ______________________
+________________ ERROR at setup of test_file_create_read_write _________________
+______________________ ERROR at setup of test_file_append ______________________
+_________________ ERROR at setup of test_directory_operations __________________
+_____________________ ERROR at setup of test_large_file_io _____________________
+___________________ ERROR at setup of test_concurrent_writes ___________________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512b] __________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1kb] __________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-128kb] _________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-256kb] _________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512kb] _________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1mb] __________
+==================================== ERRORS ====================================
+______________________ ERROR at setup of test_permissions ______________________
+_____________________ ERROR at setup of test_file_locking ______________________
+________________ ERROR at setup of test_file_create_read_write _________________
+______________________ ERROR at setup of test_file_append ______________________
+_________________ ERROR at setup of test_directory_operations __________________
+_____________________ ERROR at setup of test_large_file_io _____________________
+___________________ ERROR at setup of test_concurrent_writes ___________________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512b] __________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1kb] __________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-128kb] _________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-256kb] _________
+_________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-512kb] _________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-1mb] __________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-2mb] __________
+__________ ERROR at setup of test_data_integrity[0x0000-\x00\x00-4mb] __________
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-512b] __________
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-1kb] __________
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-128kb] _________
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-256kb] _________
+_________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-512kb] _________
+__________ ERROR at setup of test_data_integrity[0x1111-\x11\x11-1mb] __________
+Unmounting /mnt/nfs...

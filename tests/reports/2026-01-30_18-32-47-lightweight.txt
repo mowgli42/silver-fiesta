@@ -1,0 +1,39 @@
+[DEBUG 18:32:47] === Test Runner Startup ===
+[DEBUG 18:32:47] SERVER_HOST=nfs-server-lightweight
+[DEBUG 18:32:47] NFS_SERVER env=nfs-server-lightweight
+[DEBUG 18:32:47] NFS_SERVER_TYPE=lightweight
+[DEBUG 18:32:47] Starting server connectivity checks
+[DEBUG 18:32:47] Attempting to resolve hostname: nfs-server-lightweight
+[DEBUG 18:33:02] WARNING: Hostname not resolved in /etc/hosts
+[DEBUG 18:33:10] Ping attempt 1 failed for nfs-server-lightweight
+[DEBUG 18:33:19] Ping attempt 2 failed for nfs-server-lightweight
+[DEBUG 18:33:28] Ping attempt 3 failed for nfs-server-lightweight
+[DEBUG 18:33:37] Ping attempt 4 failed for nfs-server-lightweight
+[DEBUG 18:33:46] Ping attempt 5 failed for nfs-server-lightweight
+[DEBUG 18:33:55] Ping attempt 6 failed for nfs-server-lightweight
+[DEBUG 18:34:04] Ping attempt 7 failed for nfs-server-lightweight
+[DEBUG 18:34:17] Ping attempt 8 failed for nfs-server-lightweight
+[DEBUG 18:34:26] Ping attempt 9 failed for nfs-server-lightweight
+[DEBUG 18:34:34] Ping attempt 10 failed for nfs-server-lightweight
+[DEBUG 18:34:43] Ping attempt 11 failed for nfs-server-lightweight
+[DEBUG 18:34:52] Ping attempt 12 failed for nfs-server-lightweight
+[DEBUG 18:35:01] Ping attempt 13 failed for nfs-server-lightweight
+[DEBUG 18:35:10] Ping attempt 14 failed for nfs-server-lightweight
+[DEBUG 18:35:19] Ping attempt 15 failed for nfs-server-lightweight
+[DEBUG 18:35:28] Ping attempt 16 failed for nfs-server-lightweight
+[DEBUG 18:35:37] Ping attempt 17 failed for nfs-server-lightweight
+[DEBUG 18:35:46] Ping attempt 18 failed for nfs-server-lightweight
+[DEBUG 18:35:55] Ping attempt 19 failed for nfs-server-lightweight
+[DEBUG 18:36:04] Ping attempt 20 failed for nfs-server-lightweight
+[DEBUG 18:36:12] Ping attempt 21 failed for nfs-server-lightweight
+[DEBUG 18:36:21] Ping attempt 22 failed for nfs-server-lightweight
+[DEBUG 18:36:30] Ping attempt 23 failed for nfs-server-lightweight
+[DEBUG 18:36:39] Ping attempt 24 failed for nfs-server-lightweight
+[DEBUG 18:36:48] Ping attempt 25 failed for nfs-server-lightweight
+[DEBUG 18:36:57] Ping attempt 26 failed for nfs-server-lightweight
+[DEBUG 18:37:06] Ping attempt 27 failed for nfs-server-lightweight
+[DEBUG 18:37:15] Ping attempt 28 failed for nfs-server-lightweight
+[DEBUG 18:37:24] Ping attempt 29 failed for nfs-server-lightweight
+[DEBUG 18:37:33] Ping attempt 30 failed for nfs-server-lightweight
+[DEBUG 18:37:33] ERROR: Ping failed after 30 attempts
+[DEBUG 18:37:33] Checking network connectivity...

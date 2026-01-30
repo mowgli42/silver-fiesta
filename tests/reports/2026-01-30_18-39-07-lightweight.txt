@@ -1,0 +1,7 @@
+[DEBUG 18:39:07] === Test Runner Startup ===
+[DEBUG 18:39:07] SERVER_HOST=nfs-server-lightweight
+[DEBUG 18:39:07] NFS_SERVER env=nfs-server-lightweight
+[DEBUG 18:39:07] NFS_SERVER_TYPE=lightweight
+[DEBUG 18:39:07] Starting server connectivity checks
+[DEBUG 18:39:07] Attempting to resolve hostname: nfs-server-lightweight
+[DEBUG 18:39:07] Hostname resolved: 172.18.0.3      nfs-server-lightweight

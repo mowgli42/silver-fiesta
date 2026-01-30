@@ -1,0 +1,7 @@
+[DEBUG 20:13:26] === Test Runner Startup ===
+[DEBUG 20:13:26] SERVER_HOST=nfs-server-lightweight
+[DEBUG 20:13:26] NFS_SERVER env=nfs-server-lightweight
+[DEBUG 20:13:26] NFS_SERVER_TYPE=lightweight
+[DEBUG 20:13:26] Starting server connectivity checks
+[DEBUG 20:13:26] Attempting to resolve hostname: nfs-server-lightweight
+[DEBUG 20:13:40] WARNING: Hostname not resolved in /etc/hosts

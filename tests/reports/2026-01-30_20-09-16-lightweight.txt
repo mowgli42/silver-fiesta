@@ -1,0 +1,11 @@
+[DEBUG 20:09:16] === Test Runner Startup ===
+[DEBUG 20:09:16] SERVER_HOST=nfs-server-lightweight
+[DEBUG 20:09:16] NFS_SERVER env=nfs-server-lightweight
+[DEBUG 20:09:16] NFS_SERVER_TYPE=lightweight
+[DEBUG 20:09:16] Starting server connectivity checks
+[DEBUG 20:09:16] Attempting to resolve hostname: nfs-server-lightweight
+[DEBUG 20:09:31] WARNING: Hostname not resolved in /etc/hosts
+[DEBUG 20:09:39] Ping attempt 1 failed for nfs-server-lightweight
+[DEBUG 20:09:48] Ping attempt 2 failed for nfs-server-lightweight
+[DEBUG 20:09:56] Ping attempt 3 failed for nfs-server-lightweight
+[DEBUG 20:10:04] Ping attempt 4 failed for nfs-server-lightweight

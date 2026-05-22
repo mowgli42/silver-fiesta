@@ -206,6 +206,9 @@ This command will:
 - **Docker Compose**: Default profile for lightweight server (`--profile default`)
 - **Makefile**: Convenience targets for common operations
 - **Standalone Testing**: Script for testing against external NFS servers
+- **v2 Preflight & IxDF Displays**: Progressive DNS → IP → port checks with actionable panels
+- **v2 Observability**: OpenTelemetry OTLP (SignOz-compatible) and incident bundles for AI troubleshooting
+- **v2 TUI**: Optional Textual dashboard (`make test-tui`)
 
 ### ⚠️ Known Limitations
 

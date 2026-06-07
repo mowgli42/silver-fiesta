@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "silver_fiesta",
+  "project_id": "c7e4c49c-a682-40f9-bcd3-92ea7bc702b6"
+}

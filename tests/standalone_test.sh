@@ -12,8 +12,11 @@
 #   NFS_VERSION       NFS protocol version (default: 4)
 #   NFS_MOUNT_OPTS    mount options (default: vers=$NFS_VERSION,proto=tcp)
 #   PYTEST            pytest executable (default: auto-detect .venv/bin/pytest)
+#   NFS_TEST_USER     user to run pytest as (default: SUDO_USER or current user)
 #
-# NOTE: Requires NFS client tools and root/privileged access for mounting
+# NOTE: Requires NFS client tools and root/privileged access for mounting.
+#       Pytest runs as your normal user when invoked via sudo, because NFS
+#       root_squash typically denies writes from root on the share.
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -87,6 +90,80 @@ run_pytest() {
   else
     "$pytest_cmd" "$@"
   fi
+}
+
+test_user() {
+  if [[ -n "${NFS_TEST_USER:-}" ]]; then
+    echo "$NFS_TEST_USER"
+  elif [[ -n "${SUDO_USER:-}" && "$SUDO_USER" != "root" ]]; then
+    echo "$SUDO_USER"
+  else
+    id -un
+  fi
+}
+
+print_write_access_hint() {
+  local test_user="$1"
+  echo "" >&2
+  echo "Error: user '$test_user' cannot create directories on $MOUNT_POINT." >&2
+  echo "" >&2
+  echo "Common causes:" >&2
+  echo "  - NFS root_squash (root cannot write; tests must run as a normal user)" >&2
+  echo "  - Export is read-only or does not grant write access to UID $(id -u "$test_user" 2>/dev/null || echo unknown)" >&2
+  echo "" >&2
+  echo "On the NFS server, ensure the export allows read-write for your client, e.g.:" >&2
+  echo "  ${NFS_EXPORT} 192.168.50.0/24(rw,sync,no_subtree_check)" >&2
+  echo "" >&2
+  echo "Quick check:" >&2
+  echo "  sudo -u $test_user mkdir -p $MOUNT_POINT/silver-fiesta-probe && sudo -u $test_user rmdir $MOUNT_POINT/silver-fiesta-probe" >&2
+}
+
+verify_nfs_write_access() {
+  local test_user="$1"
+  local probe="$MOUNT_POINT/.silver_fiesta_write_probe_$$"
+
+  if [[ "$(id -un)" == "$test_user" ]]; then
+    if ! mkdir -p "$probe" 2>/dev/null; then
+      print_write_access_hint "$test_user"
+      exit 1
+    fi
+    rmdir "$probe"
+    return 0
+  fi
+
+  if ! sudo -u "$test_user" mkdir -p "$probe" 2>/dev/null; then
+    print_write_access_hint "$test_user"
+    exit 1
+  fi
+  sudo -u "$test_user" rmdir "$probe" 2>/dev/null || sudo -u "$test_user" rm -rf "$probe"
+}
+
+run_pytest_suite() {
+  local pytest_cmd="$1"
+  local test_user="$2"
+  local run_cmd
+
+  if [[ "$pytest_cmd" == "python3 -m pytest" ]]; then
+    run_cmd="cd $(printf '%q' "$SCRIPT_DIR") && exec python3 -m pytest -v"
+  else
+    run_cmd="cd $(printf '%q' "$SCRIPT_DIR") && exec $(printf '%q' "$pytest_cmd") -v"
+  fi
+
+  if [[ "$(id -un)" == "$test_user" ]]; then
+    export NFS_MOUNT_POINT="$MOUNT_POINT"
+    export NFS_SERVER="$SERVER_HOST"
+    export NFS_EXPORT
+    export NFS_SERVER_TYPE="${NFS_SERVER_TYPE:-standalone}"
+    eval "$run_cmd"
+    return $?
+  fi
+
+  sudo -u "$test_user" env \
+    NFS_MOUNT_POINT="$MOUNT_POINT" \
+    NFS_SERVER="$SERVER_HOST" \
+    NFS_EXPORT="$NFS_EXPORT" \
+    NFS_SERVER_TYPE="${NFS_SERVER_TYPE:-standalone}" \
+    bash -c "$run_cmd"
 }
 
 list_server_exports() {
@@ -231,8 +308,15 @@ export NFS_SERVER="$SERVER_HOST"
 export NFS_EXPORT
 export NFS_SERVER_TYPE="${NFS_SERVER_TYPE:-standalone}"
 
+TEST_USER="$(test_user)"
 PYTEST_CMD="$(resolve_pytest)"
-echo "Running tests with: $PYTEST_CMD"
 
-cd "$SCRIPT_DIR"
-run_pytest "$PYTEST_CMD" -v
+if is_root && [[ "$TEST_USER" != "root" ]]; then
+  echo "Checking write access as $TEST_USER (sudo mounts as root; NFS root_squash blocks root writes)..."
+else
+  echo "Checking write access as $TEST_USER..."
+fi
+verify_nfs_write_access "$TEST_USER"
+
+echo "Running tests as $TEST_USER with: $PYTEST_CMD"
+run_pytest_suite "$PYTEST_CMD" "$TEST_USER"

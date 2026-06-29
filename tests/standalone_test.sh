@@ -11,11 +11,13 @@
 #   NFS_MOUNT_POINT   local mount point (default: /tmp/nfs_test_mount)
 #   NFS_VERSION       NFS protocol version (default: 4)
 #   NFS_MOUNT_OPTS    mount options (default: vers=$NFS_VERSION,proto=tcp)
+#   PYTEST            pytest executable (default: auto-detect .venv/bin/pytest)
 #
 # NOTE: Requires NFS client tools and root/privileged access for mounting
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 usage() {
   sed -n '2,14p' "$0" | sed 's/^# \{0,1\}//'
@@ -39,6 +41,52 @@ print_sudo_hint() {
   echo "  sudo -E env PATH=\"\$PATH\"$quoted_args" >&2
   echo "" >&2
   echo "If you use a virtualenv for pytest, -E keeps PATH so sudo can find it." >&2
+  echo "The script also auto-detects $REPO_ROOT/.venv/bin/pytest when present." >&2
+}
+
+resolve_pytest() {
+  if [[ -n "${PYTEST:-}" ]]; then
+    if [[ -x "$PYTEST" ]] || command -v "$PYTEST" >/dev/null 2>&1; then
+      echo "$PYTEST"
+      return 0
+    fi
+    echo "Error: PYTEST is set but not executable: $PYTEST" >&2
+    return 1
+  fi
+
+  if [[ -x "$REPO_ROOT/.venv/bin/pytest" ]]; then
+    echo "$REPO_ROOT/.venv/bin/pytest"
+    return 0
+  fi
+
+  if command -v pytest >/dev/null 2>&1; then
+    command -v pytest
+    return 0
+  fi
+
+  if command -v python3 >/dev/null 2>&1 && python3 -m pytest --version >/dev/null 2>&1; then
+    echo "python3 -m pytest"
+    return 0
+  fi
+
+  echo "Error: pytest not found." >&2
+  echo "Install test dependencies in a virtualenv:" >&2
+  echo "  cd $REPO_ROOT" >&2
+  echo "  python3 -m venv .venv" >&2
+  echo "  .venv/bin/pip install -r tests/requirements.txt" >&2
+  echo "" >&2
+  echo "Then re-run this script (sudo is fine; .venv pytest will be auto-detected)." >&2
+  return 1
+}
+
+run_pytest() {
+  local pytest_cmd="$1"
+  shift
+  if [[ "$pytest_cmd" == "python3 -m pytest" ]]; then
+    python3 -m pytest "$@"
+  else
+    "$pytest_cmd" "$@"
+  fi
 }
 
 list_server_exports() {
@@ -183,5 +231,8 @@ export NFS_SERVER="$SERVER_HOST"
 export NFS_EXPORT
 export NFS_SERVER_TYPE="${NFS_SERVER_TYPE:-standalone}"
 
+PYTEST_CMD="$(resolve_pytest)"
+echo "Running tests with: $PYTEST_CMD"
+
 cd "$SCRIPT_DIR"
-pytest -v
+run_pytest "$PYTEST_CMD" -v

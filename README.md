@@ -160,16 +160,22 @@ This helps track progress during long runs and identify the active test if execu
 To run the tests against an existing NFS server (outside Docker Compose):
 
 ```bash
-./tests/standalone_test.sh <nfs-server-host>
+# Default export (host:/)
+sudo ./tests/standalone_test.sh 192.168.50.51
+
+# Specific export path
+sudo ./tests/standalone_test.sh 192.168.50.51:/mnt/Externalssd/NFS-Share
+
+# Or via environment variables
+sudo NFS_SERVER=192.168.50.51 NFS_EXPORT=/mnt/Externalssd/NFS-Share ./tests/standalone_test.sh
 ```
 
 This command will:
-1. Build the NFS server and Client images.
-2. Start the NFS server.
-3. Start the Test Client (which waits for the server).
-4. Mount the NFS share.
-5. Run the `pytest` suite.
-6. Exit with the exit code of the test runner.
+1. Mount the NFS share at `NFS_MOUNT_POINT` (default `/tmp/nfs_test_mount`).
+2. Run the `pytest` suite against that mount.
+3. Unmount and exit with the test runner's exit code.
+
+Mount options can be overridden with `NFS_VERSION` or `NFS_MOUNT_OPTS` (defaults: `vers=4,proto=tcp`).
 
 ## Test Coverage
 

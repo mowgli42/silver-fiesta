@@ -51,7 +51,8 @@ cd ~/repo/silver-fiesta
 ## Standalone against an external NFS host
 
 ```bash
-./tests/standalone_test.sh <nfs-server-host>
+sudo ./tests/standalone_test.sh <host>                    # mounts host:/
+sudo ./tests/standalone_test.sh <host>:/export/path       # specific export
 ```
 
 ## Integration with bookish-train

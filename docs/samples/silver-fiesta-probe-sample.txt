@@ -1,0 +1,70 @@
+Silver-fiesta NFS probe
+Target: nas-primary
+Mount: 192.168.50.51:/
+Options: vers=4,proto=tcp
+Log: logs/2026-07-01_14-30-00-192.168.50.51.txt
+========================================================================
+
+--- Preflight ---
+┌──────────────────────────────────────────────────────────────────────┐
+│ ✓ DNS / Hostname [OK]                                                │
+├──────────────────────────────────────────────────────────────────────┤
+│ Resolved nas.local → 192.168.50.51                                   │
+│   • getent: 192.168.50.51 nas.local                                  │
+│   host: nas.local                                                    │
+│   ip: 192.168.50.51                                                  │
+└──────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ ✓ IP Reachability [OK]                                               │
+├──────────────────────────────────────────────────────────────────────┤
+│ Host responds at 192.168.50.51                                       │
+│   • ping: host replied                                               │
+│   target: 192.168.50.51                                              │
+└──────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ ✓ NFS Service Port (2049) [OK]                                       │
+├──────────────────────────────────────────────────────────────────────┤
+│ Port 2049 reachable on 192.168.50.51                                 │
+│   • TCP 192.168.50.51:2049 open                                      │
+│   port: 2049                                                         │
+└──────────────────────────────────────────────────────────────────────┘
+
+Querying NFS exports on 192.168.50.51...
+Export list for 192.168.50.51:
+/mnt/Externalssd/NFS-Share 192.168.50.0/24
+
+Mounting NFS share 192.168.50.51:/ with options: vers=4,proto=tcp
+Mount successful. Running tests...
+Checking write access as tprettol (sudo mounts as root; NFS root_squash blocks root writes)...
+Running tests as tprettol with: /home/tprettol/repo/silver-fiesta/.venv/bin/pytest
+
+================================================================================
+Running test: test_basic_io::test_file_create_read_write
+================================================================================
+
+[TEST COMPLETE] tests/test_basic_io.py::test_file_create_read_write: PASSED (0.042s)
+
+================================================================================
+Running test: test_basic_io::test_directory_operations
+================================================================================
+
+[TEST COMPLETE] tests/test_basic_io.py::test_directory_operations: PASSED (0.031s)
+
+================================================================================
+Running test: test_data_integrity::test_crc32_patterns[1024-pattern0]
+================================================================================
+
+[TEST COMPLETE] tests/test_data_integrity.py::test_crc32_patterns[1024-pattern0]: PASSED (0.089s)
+
+================================================================================
+Running test: test_performance::test_write_throughput_1mb
+================================================================================
+[PERF] write_1mb: 112.4 MB/s, 8.9 ms
+
+[TEST COMPLETE] tests/test_performance.py::test_write_throughput_1mb: PASSED (0.156s)
+
+... (additional tests omitted in sample) ...
+
+======================== 64 passed, 2 skipped in 12.4s =========================

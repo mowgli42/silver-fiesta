@@ -3,3 +3,11 @@ pytest-html==4.1.1
 pytest-json-report==1.5.0
 pytest-benchmark==4.0.0
 pytest-timeout==2.2.0
+
+# v2 observability (optional — OTEL_ENABLED=true)
+opentelemetry-api==1.24.0
+opentelemetry-sdk==1.24.0
+opentelemetry-exporter-otlp-proto-grpc==1.24.0
+
+# v2 TUI (optional — host only, NFS_TUI=1)
+textual==0.47.1

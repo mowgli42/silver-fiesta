@@ -218,6 +218,59 @@ make clean
 docker network prune -f
 ```
 
+## v2: Preflight, observability, and incident bundles
+
+```mermaid
+flowchart TD
+  A[Host or test-runner] --> B[Preflight: DNS]
+  B --> C[IP reachability]
+  C --> D[NFS port 2049]
+  D -->|ok| E[mount + pytest]
+  D -->|fail| F[IxDF panel + exit]
+  E --> G[reports: txt html json]
+  G --> H[diagnosis + incident.json]
+  H --> I[agent_prompt for AI triage]
+  E -.->|OTEL_ENABLED| J[OTLP → SignOz / local collector]
+```
+
+### Preflight ladder
+
+Progressive checks before mount — surfaces **which layer** failed (DNS, routing, or NFS port):
+
+```bash
+make test-preflight HOST=nfs-server-lightweight
+PYTHONPATH=tests python3 tests/preflight_check.py 192.168.50.51
+sudo ./silver-fiesta 192.168.50.51 --preflight-only
+```
+
+Standalone runs include preflight by default (`--skip-preflight` to bypass).
+
+### Observability (SignOz-compatible)
+
+```bash
+cp .env.example .env   # optional
+make test-observability   # compose + local otel-collector
+```
+
+Set `OTEL_EXPORTER_OTLP_ENDPOINT` to your SignOz ingest URL when not using the bundled collector.
+
+### Incident bundles
+
+Each compose run can emit `tests/reports/<timestamp>-<server>-incident.json` containing pytest summary, preflight blocks, diagnosis, and an **`agent_prompt`** for automated triage.
+
+```bash
+PYTHONPATH=tests python3 tests/cli.py bundle tests/reports/<run>.json --host nfs-server-lightweight
+```
+
+### v2 quick validation (no Docker)
+
+```bash
+make demo-v2        # IxDF panels + unit tests (~5s)
+make test-unit-v2   # preflight + diagnosis unit tests
+```
+
+See [V2_PLAN.md](V2_PLAN.md) for architecture and follow-ups.
+
 ## Standalone script (advanced)
 
 Equivalent to the CLI internals:

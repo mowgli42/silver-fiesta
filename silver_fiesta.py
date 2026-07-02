@@ -19,11 +19,54 @@ from pathlib import Path
 from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parent
-STANDALONE_SCRIPT = REPO_ROOT / "tests" / "standalone_test.sh"
+TESTS_DIR = REPO_ROOT / "tests"
+STANDALONE_SCRIPT = TESTS_DIR / "standalone_test.sh"
 DEFAULT_LOG_DIR = REPO_ROOT / "logs"
 DEFAULT_MOUNT_POINT = "/tmp/nfs_test_mount"
 DEFAULT_NFS_VERSION = "4"
 DEFAULT_MOUNT_OPTS = "vers=4,proto=tcp"
+
+
+def _ensure_nfs_suite_path() -> None:
+    tests_path = str(TESTS_DIR)
+    if tests_path not in sys.path:
+        sys.path.insert(0, tests_path)
+
+
+def run_connectivity_preflight(
+    target: Target,
+    *,
+    log_file: Path | None = None,
+    skip: bool = False,
+) -> int:
+    """DNS → IP → port ladder. Returns 0 if ok or skipped, 1 on failure."""
+    if skip:
+        return 0
+
+    _ensure_nfs_suite_path()
+    try:
+        from nfs_suite.observability import configure_observability, span
+        from nfs_suite.preflight import run_preflight
+    except ImportError as exc:
+        print(f"Warning: preflight unavailable ({exc}); continuing.", file=sys.stderr)
+        return 0
+
+    configure_observability()
+    with span("preflight", {"host": target.host}):
+        result = run_preflight(target.host, max_attempts=30, retry_interval_s=1.0)
+
+    text = result.to_ixdf_text()
+    print(text)
+    if log_file:
+        with log_file.open("a", encoding="utf-8") as fh:
+            fh.write("\n--- Preflight ---\n")
+            fh.write(text)
+            fh.write("\n")
+
+    if not result.ok:
+        print(f"Preflight failed for {target.host}; skipping mount.", file=sys.stderr)
+        return 1
+    return 0
 
 
 @dataclass
@@ -154,7 +197,13 @@ def build_env(target: Target, log_file: Path) -> dict[str, str]:
     return env
 
 
-def run_target(target: Target, log_dir: Path) -> tuple[int, Path]:
+def run_target(
+    target: Target,
+    log_dir: Path,
+    *,
+    skip_preflight: bool = False,
+    preflight_only: bool = False,
+) -> tuple[int, Path]:
     log_file = build_log_path(log_dir, target)
     env = build_env(target, log_file)
 
@@ -169,6 +218,16 @@ def run_target(target: Target, log_dir: Path) -> tuple[int, Path]:
     log_file.write_text(header, encoding="utf-8")
 
     print(header, end="")
+
+    preflight_code = run_connectivity_preflight(
+        target, log_file=log_file, skip=skip_preflight
+    )
+    if preflight_code != 0:
+        return preflight_code, log_file
+    if preflight_only:
+        print(f"[PREFLIGHT OK] {target.label} -> {log_file}")
+        return 0, log_file
+
     print(f"Running tests (log -> {log_file})...")
 
     if not STANDALONE_SCRIPT.is_file():
@@ -235,7 +294,37 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="With --config, print configured targets and exit",
     )
+    parser.add_argument(
+        "--preflight-only",
+        action="store_true",
+        help="Run DNS → IP → port checks only (no mount)",
+    )
+    parser.add_argument(
+        "--skip-preflight",
+        action="store_true",
+        help="Skip connectivity preflight before mount",
+    )
     return parser
+
+
+def _run_targets(
+    targets: list[Target],
+    log_dir: Path,
+    args: argparse.Namespace,
+) -> int:
+    failures = 0
+    for target in targets:
+        code, log_file = run_target(
+            target,
+            log_dir,
+            skip_preflight=args.skip_preflight,
+            preflight_only=args.preflight_only,
+        )
+        status = "PASS" if code == 0 else "FAIL"
+        print(f"[{status}] {target.label} (exit {code}) -> {log_file}")
+        if code != 0:
+            failures += 1
+    return 1 if failures else 0
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -254,15 +343,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.server:
             parser.error("pass either a server argument or --config, not both")
 
-        failures = 0
-        for target in run_cfg.targets:
-            merged = merge_target(target, run_cfg.defaults)
-            code, log_file = run_target(merged, log_dir)
-            status = "PASS" if code == 0 else "FAIL"
-            print(f"[{status}] {merged.label} (exit {code}) -> {log_file}")
-            if code != 0:
-                failures += 1
-        return 1 if failures else 0
+        merged = [merge_target(t, run_cfg.defaults) for t in run_cfg.targets]
+        return _run_targets(merged, log_dir, args)
 
     if not args.server:
         parser.print_help()
@@ -282,10 +364,7 @@ def main(argv: list[str] | None = None) -> int:
             "test_user": args.test_user,
         },
     )
-    code, log_file = run_target(target, log_dir)
-    status = "PASS" if code == 0 else "FAIL"
-    print(f"[{status}] {target.label} (exit {code}) -> {log_file}")
-    return code
+    return _run_targets([target], log_dir, args)
 
 
 if __name__ == "__main__":

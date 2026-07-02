@@ -1,67 +1,36 @@
 #!/usr/bin/env python3
-import json
-import re
+"""CLI wrapper for v2 structured failure diagnosis."""
 import sys
 from pathlib import Path
 
+# Allow imports when run from /app or tests/
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-DIAG_RULES = [
-    (r"Connection timed out|timeout", "network_timeout", "Likely packet loss/latency or blackhole."),
-    (r"Input/output error|EIO", "io_error", "Likely mid-transfer disconnect or server instability."),
-    (r"No such file or directory", "bad_export", "Likely wrong export path or server export misconfig."),
-    (r"Permission denied|EPERM|EACCES", "permission", "Likely read-only export or root_squash."),
-    (r"Stale file handle|ESTALE", "stale_handle", "Likely server restart or export reload."),
-    (r"RPC|rpc", "rpc_error", "Possible NFS version mismatch or rpc services unavailable."),
-    (r"mount.*failed", "mount_failed", "Mount failed; check NFS version, export path, or network."),
-]
+from nfs_suite.diagnosis import diagnose  # noqa: E402
 
 
-def load_text(path):
-    try:
-        return Path(path).read_text(errors="ignore")
-    except Exception:
-        return ""
-
-
-def diagnose_from_text(text):
-    findings = []
-    for pattern, code, hint in DIAG_RULES:
-        if re.search(pattern, text, re.IGNORECASE):
-            findings.append({"code": code, "hint": hint, "pattern": pattern})
-    return findings
-
-
-def main():
+def main() -> int:
     if len(sys.argv) < 2:
-        print("Usage: diagnose_failures.py <report_txt> [report_json]")
+        print(
+            "Usage: diagnose_failures.py <report_json> [fault_profile] [expected_failures] [report_txt]",
+            file=sys.stderr,
+        )
         return 1
 
-    report_txt = sys.argv[1]
-    report_json = sys.argv[2] if len(sys.argv) > 2 else None
+    report_json = sys.argv[1]
+    fault_profile = sys.argv[2] if len(sys.argv) > 2 else "none"
+    expected_failures = int(sys.argv[3]) if len(sys.argv) > 3 and sys.argv[3].isdigit() else 0
+    report_txt = sys.argv[4] if len(sys.argv) > 4 else report_json.replace(".json", ".txt")
 
-    text = load_text(report_txt)
-    findings = diagnose_from_text(text)
-
-    print("==========================================")
-    print("FAILURE DIAGNOSIS")
-    print("==========================================")
-    if not findings:
-        print("No known failure signatures detected.")
-    else:
-        for item in findings:
-            print(f"- {item['code']}: {item['hint']} (pattern: {item['pattern']})")
-
-    if report_json and Path(report_json).exists():
-        try:
-            data = json.loads(Path(report_json).read_text())
-            failures = [t for t in data.get("tests", []) if t.get("outcome") in ("failed", "error")]
-            print("")
-            print(f"JSON failures: {len(failures)}")
-        except Exception:
-            pass
+    report = diagnose(
+        report_json_path=report_json,
+        report_txt_path=report_txt,
+        fault_profile=fault_profile,
+        expected_failures=expected_failures,
+    )
+    print(report.to_text())
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

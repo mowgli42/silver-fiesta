@@ -6,6 +6,18 @@ import time
 
 MOUNT_POINT = os.environ.get("NFS_MOUNT_POINT", "/mnt/nfs")
 
+
+@pytest.fixture(scope="session", autouse=True)
+def _v2_observability():
+    """Initialize OTLP tracing when OTEL_ENABLED=true."""
+    try:
+        from nfs_suite.observability import configure_observability
+
+        configure_observability()
+    except ImportError:
+        pass
+
+
 @pytest.fixture(scope="session")
 def nfs_root():
     if not os.path.exists(MOUNT_POINT):

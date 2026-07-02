@@ -346,7 +346,43 @@ fi
 if [ -f "$REPORT_JSON" ] && command -v python3 >/dev/null 2>&1; then
     echo ""
     echo "Generating failure diagnosis..."
-    python3 /app/diagnose_failures.py "$REPORT_JSON" "${FAULT_PROFILE:-none}" "${EXPECTED_FAILURES:-0}" > "$REPORT_DIAGNOSIS" 2>/dev/null || true
+    python3 /app/diagnose_failures.py "$REPORT_JSON" "${FAULT_PROFILE:-none}" "${EXPECTED_FAILURES:-0}" "$REPORT_TXT" > "$REPORT_DIAGNOSIS" 2>/dev/null || true
+fi
+
+# v2: AI-ready incident bundle for agents / SignOz correlation
+REPORT_INCIDENT="${REPORT_BASE}-incident.json"
+if [ -f "$REPORT_JSON" ] && command -v python3 >/dev/null 2>&1; then
+    echo ""
+    echo "Generating incident bundle..."
+    export REPORT_JSON REPORT_INCIDENT SERVER_HOST FAULT_PROFILE EXPECTED_FAILURES
+    python3 - <<'PYEOF' 2>/dev/null || true
+import os, sys
+sys.path.insert(0, "/app")
+from nfs_suite.incident_bundle import build_incident_bundle, write_incident_bundle
+from nfs_suite.preflight import run_preflight
+
+report_json = os.environ["REPORT_JSON"]
+host = os.environ.get("SERVER_HOST", "")
+fault = os.environ.get("FAULT_PROFILE", "none")
+expected = int(os.environ.get("EXPECTED_FAILURES", "0") or 0)
+preflight = None
+if host:
+    preflight = run_preflight(
+        host,
+        fault_profile=fault if fault not in ("none", "") else None,
+        max_attempts=3,
+        retry_interval_s=0,
+    )
+bundle = build_incident_bundle(
+    report_json,
+    report_txt_path=report_json.replace(".json", ".txt"),
+    fault_profile=fault,
+    expected_failures=expected,
+    preflight=preflight,
+)
+write_incident_bundle(bundle, os.environ["REPORT_INCIDENT"])
+print(f"Incident bundle: {os.environ['REPORT_INCIDENT']}")
+PYEOF
 fi
 
 # Display summary

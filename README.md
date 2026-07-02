@@ -77,6 +77,8 @@ The probe runs **64+ pytest cases** against the mounted share. Tests run as your
 | `test_performance` | Write/read throughput and latency |
 | `test_off_nominal_*` | Fault scenarios when run in container harness (see [TESTING.md](TESTING.md)) |
 
+**v2 additions:** DNS → IP → port **preflight** with IxDF panels, SignOz-compatible **OTLP tracing**, and **incident bundles** (`*-incident.json`) for AI troubleshooting. See [TESTING.md](TESTING.md#v2-preflight-observability-and-incident-bundles).
+
 **Skipped or environment-dependent:** locking without `lockd`, some permission checks when running as root in containers.
 
 ## Options
@@ -92,6 +94,8 @@ sudo ./silver-fiesta [host|host:/export] [options]
   --test-user USER        Run pytest as USER (default: SUDO_USER)
   --log-dir PATH          Log directory (default: logs/)
   --list-targets          Print targets from config and exit
+  --preflight-only        Run DNS → IP → port checks and exit
+  --skip-preflight        Skip preflight (mount immediately)
 ```
 
 ## Troubleshooting

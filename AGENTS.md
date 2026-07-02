@@ -35,7 +35,13 @@ sudo ./silver-fiesta nas:/exports/backup --nfs-version 3 --mount-opts vers=3,pro
 sudo ./silver-fiesta --config config/example.json
 ```
 
-Logs: `logs/YYYY-MM-DD_HH-MM-SS-<server>.txt` (always created).
+Logs: `logs/YYYY-MM-DD_HH-MM-SS-<server>.txt` (always created). Preflight (DNS → IP → port) runs before mount unless `--skip-preflight`.
+
+```bash
+sudo ./silver-fiesta 192.168.50.51 --preflight-only   # connectivity only
+make demo-v2                                          # v2 IxDF demo (no NFS)
+make test-unit-v2                                     # v2 unit tests
+```
 
 ## Container harness (development / CI)
 

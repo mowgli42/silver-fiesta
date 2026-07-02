@@ -1,6 +1,6 @@
 # Agent instructions — silver-fiesta
 
-NFS transfer-protocol test harness (Docker/Podman + pytest). Use this repo to validate NFS mount/read/write performance and fault behavior before wiring results into [bookish-train](https://github.com/mowgli42/bookish-train) backup diagnostics.
+NFS client probe + container test harness. Standalone tool for real servers; Docker/Podman stack for CI and fault injection.
 
 ## Location on this machine
 
@@ -9,65 +9,60 @@ NFS transfer-protocol test harness (Docker/Podman + pytest). Use this repo to va
 
 ## Prerequisites
 
-- **Podman** (preferred) or Docker + compose
-- **NFS kernel modules on the host** (required for in-container NFS server):
+- **NFS client** (`nfs-common`) for standalone probes; **sudo** for mount
+- **Podman** (preferred) or Docker + compose for in-repo harness
+- **NFS kernel modules on the host** when running compose NFS servers:
   ```bash
   sudo modprobe nfs nfsd
   ```
-- Python 3 + venv for local pytest collection/smoke
+- Python 3 + venv
 
-## Setup (agent / CI-like host)
+## Setup
 
 ```bash
 source ~/github-env/env.sh
 cd ~/repo/silver-fiesta
 python3 -m venv .venv
 .venv/bin/pip install -r tests/requirements.txt
-chmod +x scripts/container-compose.sh
-./scripts/container-compose.sh config -q   # validate compose file
+chmod +x silver-fiesta scripts/container-compose.sh
 ```
 
-Or: `~/github-env/setup.sh` (includes silver-fiesta when listed in `repos.conf`).
-
-## Run full NFS suite (privileged)
+## Standalone client probe (primary tool)
 
 ```bash
-cd ~/repo/silver-fiesta
-make test          # lightweight NFS server (default)
-make test-kernel   # kernel-based server (build + profile kernel)
+sudo ./silver-fiesta 192.168.50.51
+sudo ./silver-fiesta nas:/exports/backup --nfs-version 3 --mount-opts vers=3,proto=tcp,nolock
+sudo ./silver-fiesta --config config/example.json
 ```
 
-Uses `./scripts/container-compose.sh` when `COMPOSE` is unset (Podman on this host).
+Logs: `logs/YYYY-MM-DD_HH-MM-SS-<server>.txt` (always created).
 
-Reports land in `tests/reports/` (`.txt`, `.html`, `.json`, performance and diagnosis sidecars).
+## Container harness (development / CI)
+
+See [TESTING.md](TESTING.md).
+
+```bash
+make test          # lightweight NFS server (default)
+make test-kernel   # kernel-based server
+```
+
+Reports: `tests/reports/`.
 
 ## Quick smoke without NFS mount
 
 ```bash
-cd ~/repo/silver-fiesta
 .venv/bin/python -m pytest tests/ --collect-only -q
-```
-
-## Standalone against an external NFS host
-
-```bash
-sudo ./tests/standalone_test.sh <host>                    # mounts host:/
-sudo ./tests/standalone_test.sh <host>:/export/path       # specific export
+.venv/bin/python -m pytest tests/test_silver_fiesta_cli.py -q
 ```
 
 ## Integration with bookish-train
 
-bookish-train uses structured `EBK` logs and `transfer-log.jsonl` for backup troubleshooting (`scripts/home-backup-chain-demo.py`, `clients/common/edge_observability.py`). When extending silver-fiesta for bookish-train protocol checks, emit the same log shapes so failed backups can be correlated with NFS probe results.
+bookish-train uses structured `EBK` logs and `transfer-log.jsonl` for backup troubleshooting. When extending silver-fiesta for bookish-train protocol checks, emit the same log shapes so failed backups can be correlated with NFS probe results.
 
 ## Issue Tracking
 
-This project uses **bd (beads)** for issue tracking. Run `bd prime` for workflow context, or install hooks with `bd hooks install` for automatic context injection.
-
-Quick reference:
+This project uses **bd (beads)** for issue tracking. Run `bd prime` for workflow context.
 
 - `bd ready` - find unblocked work
 - `bd create "Title" --type task --priority 2` - create an issue
 - `bd close <id>` - close completed work
-- `bd dolt push` - push Beads data when using a shared Beads remote
-
-For full workflow details, run `bd prime`.

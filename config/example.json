@@ -1,0 +1,22 @@
+{
+  "log_dir": "logs",
+  "defaults": {
+    "nfs_version": "4",
+    "mount_opts": "vers=4,proto=tcp",
+    "mount_point": "/tmp/nfs_test_mount"
+  },
+  "targets": [
+    {
+      "name": "nas-primary",
+      "host": "192.168.50.51",
+      "export": "/"
+    },
+    {
+      "name": "nas-backup-v3",
+      "host": "192.168.50.52",
+      "export": "/mnt/backup",
+      "nfs_version": "3",
+      "mount_opts": "vers=3,proto=tcp,nolock"
+    }
+  ]
+}

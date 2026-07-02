@@ -3,3 +3,11 @@
 .dolt/
 *.db
 .beads-credential-key
+
+# Local probe logs and Python env
+logs/
+.venv/
+__pycache__/
+*.pyc
+tests/reports/
+nfslog.txt

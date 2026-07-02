@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Client-side NFS probe — see README.md
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec "$ROOT/silver_fiesta.py" "$@"

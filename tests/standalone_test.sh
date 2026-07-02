@@ -13,6 +13,7 @@
 #   NFS_MOUNT_OPTS    mount options (default: vers=$NFS_VERSION,proto=tcp)
 #   PYTEST            pytest executable (default: auto-detect .venv/bin/pytest)
 #   NFS_TEST_USER     user to run pytest as (default: SUDO_USER or current user)
+#   SILVER_FIESTA_LOG_FILE  append all output to this log file (set by silver-fiesta)
 #
 # NOTE: Requires NFS client tools and root/privileged access for mounting.
 #       Pytest runs as your normal user when invoked via sudo, because NFS
@@ -149,21 +150,29 @@ run_pytest_suite() {
     run_cmd="cd $(printf '%q' "$SCRIPT_DIR") && exec $(printf '%q' "$pytest_cmd") -v"
   fi
 
+  local runner
   if [[ "$(id -un)" == "$test_user" ]]; then
     export NFS_MOUNT_POINT="$MOUNT_POINT"
     export NFS_SERVER="$SERVER_HOST"
     export NFS_EXPORT
     export NFS_SERVER_TYPE="${NFS_SERVER_TYPE:-standalone}"
-    eval "$run_cmd"
-    return $?
+    runner=(bash -c "$run_cmd")
+  else
+    runner=(sudo -u "$test_user" env \
+      NFS_MOUNT_POINT="$MOUNT_POINT" \
+      NFS_SERVER="$SERVER_HOST" \
+      NFS_EXPORT="$NFS_EXPORT" \
+      NFS_SERVER_TYPE="${NFS_SERVER_TYPE:-standalone}" \
+      bash -c "$run_cmd")
   fi
 
-  sudo -u "$test_user" env \
-    NFS_MOUNT_POINT="$MOUNT_POINT" \
-    NFS_SERVER="$SERVER_HOST" \
-    NFS_EXPORT="$NFS_EXPORT" \
-    NFS_SERVER_TYPE="${NFS_SERVER_TYPE:-standalone}" \
-    bash -c "$run_cmd"
+  if [[ -n "${SILVER_FIESTA_LOG_FILE:-}" ]]; then
+    mkdir -p "$(dirname "$SILVER_FIESTA_LOG_FILE")"
+    "${runner[@]}" 2>&1 | tee -a "$SILVER_FIESTA_LOG_FILE"
+    return "${PIPESTATUS[0]}"
+  fi
+
+  "${runner[@]}"
 }
 
 list_server_exports() {
@@ -252,6 +261,11 @@ else
   INVOCATION_ARGS=("${SERVER_HOST}:${NFS_EXPORT}")
 fi
 
+if [[ -n "${SILVER_FIESTA_LOG_FILE:-}" ]]; then
+  mkdir -p "$(dirname "$SILVER_FIESTA_LOG_FILE")"
+  exec > >(tee -a "$SILVER_FIESTA_LOG_FILE") 2>&1
+fi
+
 list_server_exports || true
 validate_export_path
 
@@ -320,3 +334,4 @@ verify_nfs_write_access "$TEST_USER"
 
 echo "Running tests as $TEST_USER with: $PYTEST_CMD"
 run_pytest_suite "$PYTEST_CMD" "$TEST_USER"
+exit $?

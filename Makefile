@@ -33,7 +33,10 @@ test-verbose:
 		$(COMPOSE) --profile default up --build --abort-on-container-exit
 
 test-standalone:
-	./tests/standalone_test.sh $(NFS_SERVER)
+	sudo ./silver-fiesta $(NFS_SERVER)
+
+probe:
+	sudo ./silver-fiesta $(NFS_SERVER)
 
 clean:
 	$(COMPOSE) down -v --remove-orphans

@@ -1,0 +1,58 @@
+{
+  "log_dir": "logs",
+  "defaults": {
+    "host": "192.168.50.51",
+    "export": "/",
+    "mount_point": "/tmp/nfs_perf_mount"
+  },
+  "profiles": [
+    {
+      "name": "baseline-v4",
+      "nfs_version": "4",
+      "mount_opts": "vers=4,proto=tcp,hard",
+      "notes": "Default-ish NFSv4 TCP hard mount; use as the before baseline."
+    },
+    {
+      "name": "large-io-1m",
+      "nfs_version": "4",
+      "mount_opts": "vers=4,proto=tcp,hard,rsize=1048576,wsize=1048576",
+      "notes": "1 MiB rsize/wsize for sequential large-file throughput."
+    },
+    {
+      "name": "large-io-64k",
+      "nfs_version": "4",
+      "mount_opts": "vers=4,proto=tcp,hard,rsize=65536,wsize=65536",
+      "notes": "64 KiB buffers; useful on older stacks or constrained clients."
+    },
+    {
+      "name": "cache-actimeo-60",
+      "nfs_version": "4",
+      "mount_opts": "vers=4,proto=tcp,hard,rsize=1048576,wsize=1048576,ac,actimeo=60",
+      "notes": "Longer attribute cache for read-heavy, single-writer workloads."
+    },
+    {
+      "name": "cache-nocto",
+      "nfs_version": "4",
+      "mount_opts": "vers=4,proto=tcp,hard,rsize=1048576,wsize=1048576,ac,actimeo=60,nocto",
+      "notes": "Skip close-to-open consistency; only for read-mostly media libraries."
+    },
+    {
+      "name": "resilient-timeouts",
+      "nfs_version": "4",
+      "mount_opts": "vers=4,proto=tcp,hard,timeo=600,retrans=5,rsize=1048576,wsize=1048576",
+      "notes": "Higher timeo/retrans for flaky links; may not raise peak throughput."
+    },
+    {
+      "name": "nfsv3-tcp",
+      "nfs_version": "3",
+      "mount_opts": "vers=3,proto=tcp,hard,nolock,rsize=1048576,wsize=1048576",
+      "notes": "NFSv3 can be faster for simple high-throughput exports on some NAS boxes."
+    },
+    {
+      "name": "nfsv3-nolock-64k",
+      "nfs_version": "3",
+      "mount_opts": "vers=3,proto=tcp,hard,nolock,rsize=65536,wsize=65536",
+      "notes": "NFSv3 with mid-size I/O; compare against nfsv3-tcp and baseline-v4."
+    }
+  ]
+}

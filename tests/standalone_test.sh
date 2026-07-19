@@ -13,6 +13,8 @@
 #   NFS_MOUNT_OPTS    mount options (default: vers=$NFS_VERSION,proto=tcp)
 #   PYTEST            pytest executable (default: auto-detect .venv/bin/pytest)
 #   NFS_TEST_USER     user to run pytest as (default: SUDO_USER or current user)
+#   NFS_PYTEST_ARGS   extra pytest args (e.g. -m performance for --perf-only)
+#   PERF_TESTS        set to 1 when running performance-focused sweeps
 #   SILVER_FIESTA_LOG_FILE  append all output to this log file (set by silver-fiesta)
 #
 # NOTE: Requires NFS client tools and root/privileged access for mounting.
@@ -143,11 +145,12 @@ run_pytest_suite() {
   local pytest_cmd="$1"
   local test_user="$2"
   local run_cmd
+  local extra_args="${NFS_PYTEST_ARGS:-}"
 
   if [[ "$pytest_cmd" == "python3 -m pytest" ]]; then
-    run_cmd="cd $(printf '%q' "$SCRIPT_DIR") && exec python3 -m pytest -v"
+    run_cmd="cd $(printf '%q' "$SCRIPT_DIR") && exec python3 -m pytest -v ${extra_args}"
   else
-    run_cmd="cd $(printf '%q' "$SCRIPT_DIR") && exec $(printf '%q' "$pytest_cmd") -v"
+    run_cmd="cd $(printf '%q' "$SCRIPT_DIR") && exec $(printf '%q' "$pytest_cmd") -v ${extra_args}"
   fi
 
   local runner
@@ -156,6 +159,7 @@ run_pytest_suite() {
     export NFS_SERVER="$SERVER_HOST"
     export NFS_EXPORT
     export NFS_SERVER_TYPE="${NFS_SERVER_TYPE:-standalone}"
+    export PERF_TESTS="${PERF_TESTS:-0}"
     runner=(bash -c "$run_cmd")
   else
     runner=(sudo -u "$test_user" env \
@@ -163,6 +167,8 @@ run_pytest_suite() {
       NFS_SERVER="$SERVER_HOST" \
       NFS_EXPORT="$NFS_EXPORT" \
       NFS_SERVER_TYPE="${NFS_SERVER_TYPE:-standalone}" \
+      PERF_TESTS="${PERF_TESTS:-0}" \
+      NFS_PYTEST_ARGS="$extra_args" \
       bash -c "$run_cmd")
   fi
 

@@ -1,8 +1,9 @@
-.PHONY: test test-kernel test-lightweight test-standalone test-verbose test-observability test-unit-v2 test-preflight test-tui demo-v2 clean config check-nfs-modules probe
+.PHONY: test test-kernel test-lightweight test-standalone test-verbose test-observability test-unit-v2 test-preflight test-tui demo-v2 clean config check-nfs-modules probe perf-sweep perf-compare
 
 COMPOSE ?= ./scripts/container-compose.sh
 RUNTIME ?= $(shell command -v podman >/dev/null 2>&1 && echo podman || echo docker)
 PYTEST = .venv/bin/pytest
+PERF_CONFIG ?= config/performance-profiles.json
 
 check-nfs-modules:
 	@if [ ! -r /proc/fs/nfsd/version ] 2>/dev/null; then \
@@ -59,6 +60,16 @@ test-standalone:
 
 probe:
 	sudo ./silver-fiesta $(NFS_SERVER)
+
+# Connect → mount each profile → perf tests → remount next → compare fastest
+perf-sweep:
+	sudo ./silver-fiesta --config $(PERF_CONFIG) --perf-only --compare-perf
+
+# Rank existing probe logs without remounting: make perf-compare LOGS='logs/a.txt logs/b.txt'
+perf-compare:
+	@test -n "$(LOGS)" || (echo "Usage: make perf-compare LOGS='logs/*.txt'" >&2; exit 2)
+	chmod +x scripts/compare_perf.py
+	./scripts/compare_perf.py $(LOGS)
 
 clean:
 	$(COMPOSE) down -v --remove-orphans

@@ -2,6 +2,76 @@
 
 This document covers **in-repo NFS server testing**: Docker/Podman compose stacks, fault injection, and rich reports. For probing a real NAS from your laptop or backup host, use the standalone tool in [README.md](README.md).
 
+## Testing methods (sequence overview)
+
+```mermaid
+sequenceDiagram
+  autonumber
+  actor Op as Operator
+  participant SF as silver-fiesta CLI
+  participant Comp as compose harness
+  participant LW as lightweight NFS
+  participant KN as kernel NFS
+  participant Fault as faults / netem
+  participant Obs as OTLP collector
+
+  rect rgb(245,245,245)
+    note over Op,SF: A. Standalone client probe (real NAS)
+    Op->>SF: sudo ./silver-fiesta host:/export
+    SF->>SF: Preflight DNS → IP → :2049
+    SF->>SF: mount + full pytest → logs/
+  end
+
+  rect rgb(245,245,245)
+    note over Op,SF: B. Mount-option performance sweep
+    Op->>SF: --config performance-profiles.json --perf-only --compare-perf
+    loop Each profile
+      SF->>SF: remount with new rsize/wsize/cache/vers opts
+      SF->>SF: pytest -m performance
+    end
+    SF-->>Op: ranked fastest profile
+  end
+
+  rect rgb(245,245,245)
+    note over Op,LW: C. Compose lightweight (default CI)
+    Op->>Comp: make test
+    Comp->>LW: nfs-server-lightweight
+    Comp->>Comp: test-runner mounts + pytest → tests/reports/
+  end
+
+  rect rgb(245,245,245)
+    note over Op,KN: D. Compose kernel server
+    Op->>Comp: make test-kernel
+    Comp->>KN: Alpine nfs-utils server
+    Comp->>Comp: test-runner + reports
+  end
+
+  rect rgb(245,245,245)
+    note over Op,Fault: E. Fault / off-nominal
+    Op->>Comp: FAULT_PROFILE=network_loss_10 --profile faults
+    Comp->>Fault: netem / bad exports
+    Comp-->>Op: diagnosis + incident.json
+  end
+
+  rect rgb(245,245,245)
+    note over Op,Obs: F. Observability / preflight-only
+    Op->>SF: --preflight-only
+    Op->>Comp: make test-observability
+    Comp->>Obs: OTLP spans (SignOz-compatible)
+  end
+```
+
+| Method | Command | When to use |
+|--------|---------|-------------|
+| **Standalone** | `sudo ./silver-fiesta <host>` | Real NAS / lab; pre-backup smoke |
+| **Perf sweep** | `make perf-sweep` | Find fastest client mount options |
+| **Lightweight** | `make test` | Fast local CI; no image build |
+| **Kernel** | `make test-kernel` | Production-like nfsd behavior |
+| **Verbose** | `make test-verbose` | Debug server-side ops |
+| **Faults** | `FAULT_PROFILE=... --profile faults` | Failure-handling regressions |
+| **Preflight** | `--preflight-only` / `make test-preflight` | Connectivity ladder only |
+| **Observability** | `make test-observability` | OTLP traces + incident bundles |
+
 ## Test configurations
 
 ```mermaid
@@ -10,6 +80,12 @@ flowchart TB
     C1[Your machine]
     C1 -->|sudo ./silver-fiesta| NAS1[(Existing NFS server)]
     C1 -->|logs/ date-server.txt| LOG1[Per-run log]
+  end
+
+  subgraph perf["Performance profile sweep"]
+    C2[Your machine]
+    C2 -->|profiles[].mount_opts| NAS2[(Same NFS server)]
+    C2 --> CMP[compare_perf ranking]
   end
 
   subgraph compose_default["Compose: default profile"]
@@ -41,6 +117,7 @@ flowchart TB
 | Mode | Command | NFS server | Use when |
 |------|---------|------------|----------|
 | **Standalone** | `sudo ./silver-fiesta <host>` | Your NAS / lab server | Pre-flight before backups; real network |
+| **Perf sweep** | `make perf-sweep` | Your NAS (client mount opts) | Compare rsize/wsize/cache/vers profiles |
 | **Lightweight** | `make test` | `erichough/nfs-server` image | Fast CI; no image build |
 | **Kernel** | `make test-kernel` | Alpine + `nfs-utils` | Production-like server behavior |
 | **Verbose** | `make test-verbose` | Either + debug logs | Debugging server-side ops |
@@ -53,12 +130,13 @@ flowchart LR
     V2[NFS_MOUNT_OPTS]
     V3[FAULT_PROFILE]
     V4[NFS_VERBOSE]
+    V5[NFS_PYTEST_ARGS]
   end
 
-  env --> TR[test-runner]
-  TR --> MP["/mnt/nfs mount"]
+  env --> TR[test-runner / standalone]
+  TR --> MP["NFS mount"]
   MP --> PY[pytest suite]
-  PY --> OUT["reports: .txt .html .json"]
+  PY --> OUT["reports / logs + optional compare"]
 ```
 
 ## Prerequisites
@@ -109,6 +187,28 @@ Or directly:
 | `NFS_MOUNT_POINT` | `/mnt/nfs` | Inside test-runner |
 | `NFS_VERBOSE` | unset | Enable server debug logging |
 | `FAULT_PROFILE` | unset | See fault section below |
+| `NFS_PYTEST_ARGS` | unset | Extra pytest args (standalone `--perf-only` sets `-m performance`) |
+
+## Performance profile sweeps (client mount options)
+
+For connect → test → remount → compare against a **real** NAS, use the standalone tool (not compose):
+
+```bash
+# 1. Set defaults.host / defaults.export in config/performance-profiles.json
+sudo ./silver-fiesta --config config/performance-profiles.json --list-targets
+
+# 2. Sweep profiles (perf tests only) and print the fastest
+make perf-sweep
+# equivalent:
+sudo ./silver-fiesta --config config/performance-profiles.json --perf-only --compare-perf
+
+# 3. Re-compare saved logs later
+./scripts/compare_perf.py logs/*-baseline-v4.txt logs/*-large-io-1m.txt
+```
+
+Profiles cover client knobs from common NFS tuning guidance: `rsize`/`wsize`, `hard` + `timeo`/`retrans`, `actimeo`/`nocto`, and NFSv3 vs v4. Server-side settings (nfsd threads, export `sync`/`async`, jumbo frames) must be changed on the NAS, then re-run the same sweep.
+
+See [README.md — Performance tuning loop](README.md#performance-tuning-loop).
 
 ## NFS export layout
 
@@ -183,9 +283,12 @@ Kernel server logs individual NFS operations; lightweight server logs via contai
 silver-fiesta/           # ./silver-fiesta — client probe CLI
 silver_fiesta.py         # CLI implementation
 config/example.json      # Multi-target config sample
+config/performance-profiles.json  # Mount-option sweep presets
+scripts/compare_perf.py  # Rank [PERF] results across logs
 tests/
   standalone_test.sh     # Mount + pytest (standalone)
   run_tests.sh           # In-container runner + reports
+  nfs_suite/perf_compare.py
   test_*.py              # Pytest modules
   reports/               # Compose run output
 nfs-server/              # Kernel server image

@@ -33,12 +33,14 @@ chmod +x silver-fiesta scripts/container-compose.sh
 sudo ./silver-fiesta 192.168.50.51
 sudo ./silver-fiesta nas:/exports/backup --nfs-version 3 --mount-opts vers=3,proto=tcp,nolock
 sudo ./silver-fiesta --config config/example.json
+sudo ./silver-fiesta --config config/performance-profiles.json --perf-only --compare-perf
 ```
 
 Logs: `logs/YYYY-MM-DD_HH-MM-SS-<server>.txt` (always created). Preflight (DNS → IP → port) runs before mount unless `--skip-preflight`.
 
 ```bash
 sudo ./silver-fiesta 192.168.50.51 --preflight-only   # connectivity only
+make perf-sweep                                       # mount-option sweep + ranking
 make demo-v2                                          # v2 IxDF demo (no NFS)
 make test-unit-v2                                     # v2 unit tests
 ```

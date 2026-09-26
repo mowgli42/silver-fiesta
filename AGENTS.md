@@ -72,3 +72,7 @@ This project uses **bd (beads)** for issue tracking. Run `bd prime` for workflow
 - `bd ready` - find unblocked work
 - `bd create "Title" --type task --priority 2` - create an issue
 - `bd close <id>` - close completed work
+
+## Secrets
+
+Do not commit private keys, *-key.pem, *.key, .env secrets, or BEGIN … PRIVATE KEY. Generate locally; gitignore keys.

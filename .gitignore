@@ -11,3 +11,7 @@ __pycache__/
 *.pyc
 tests/reports/
 nfslog.txt
+
+# Secrets (never commit private keys)
+*-key.pem
+*.key
